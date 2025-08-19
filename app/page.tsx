@@ -56,17 +56,18 @@ export default function SolMedspaLanding() {
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             {/* Sol MedSpa Logo */}
-            <div className="flex items-center bg-gradient-to-r from-yellow-500/90 to-amber-500/90 px-6 py-2 rounded-xl backdrop-blur-sm border border-yellow-300/40 shadow-lg">
+            <div className="flex items-center">
               <Image
                 src="/images/sol-logo.svg"
                 alt="Sol MedSpa Logo"
-                width={280}
-                height={168}
-                className="h-16 w-auto mr-4"
+                width={200}
+                height={120}
+                className="h-8 md:h-12 w-auto mr-2 md:mr-3"
               />
               <div className="flex flex-col">
-                <span className="text-white font-serif text-3xl font-bold tracking-wide bg-gradient-to-r from-yellow-200 to-orange-100 bg-clip-text text-transparent drop-shadow-lg">
-                  Sol MedSpa
+                <span className="text-white font-serif text-lg md:text-2xl font-bold tracking-wide">Sol MedSpa</span>
+                <span className="text-white/80 text-xs md:text-sm font-light tracking-wider hidden sm:block">
+                  Radiant Skin. Reimagined.
                 </span>
               </div>
             </div>
