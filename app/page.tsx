@@ -60,9 +60,9 @@ export default function SolMedspaLanding() {
               <Image
                 src="/images/sol-logo.svg"
                 alt="Sol MedSpa Logo"
-                width={200}
-                height={120}
-                className="h-8 md:h-12 w-auto mr-2 md:mr-3"
+                width={240}
+                height={144}
+                className="h-12 md:h-16 w-auto mr-2 md:mr-3"
               />
               <div className="flex flex-col">
                 <span className="text-white font-serif text-lg md:text-2xl font-bold tracking-wide">Sol MedSpa</span>
