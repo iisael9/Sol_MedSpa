@@ -8,20 +8,38 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Sun, Sparkles, Heart, Instagram, Facebook, Twitter, ChevronDown } from "lucide-react"
 import Image from "next/image"
+import { submitEmail } from "./actions/email"
 
 export default function SolMedspaLanding() {
   const [email, setEmail] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would integrate with your email service
-    console.log("Email submitted:", email)
-    setIsSubmitted(true)
-    setEmail("")
+    setIsSubmitting(true)
+    setMessage(null)
 
-    // Reset success message after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000)
+    const formData = new FormData()
+    formData.append("email", email)
+
+    try {
+      const result = await submitEmail(formData)
+
+      if (result.success) {
+        setMessage({ type: "success", text: result.message })
+        setEmail("")
+      } else {
+        setMessage({ type: "error", text: result.message })
+      }
+    } catch (error) {
+      setMessage({ type: "error", text: "Something went wrong. Please try again." })
+    } finally {
+      setIsSubmitting(false)
+
+      // Clear message after 5 seconds
+      setTimeout(() => setMessage(null), 5000)
+    }
   }
 
   const scrollToSection = (sectionId: string) => {
@@ -38,8 +56,19 @@ export default function SolMedspaLanding() {
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             {/* Sol MedSpa Logo */}
-            <div className="flex items-center">
-              
+            <div className="flex items-center bg-gradient-to-r from-yellow-500/90 to-amber-500/90 px-6 py-2 rounded-xl backdrop-blur-sm border border-yellow-300/40 shadow-lg">
+              <Image
+                src="/images/sol-logo.svg"
+                alt="Sol MedSpa Logo"
+                width={280}
+                height={168}
+                className="h-16 w-auto mr-4"
+              />
+              <div className="flex flex-col">
+                <span className="text-white font-serif text-3xl font-bold tracking-wide bg-gradient-to-r from-yellow-200 to-orange-100 bg-clip-text text-transparent drop-shadow-lg">
+                  Sol MedSpa
+                </span>
+              </div>
             </div>
 
             {/* Navigation Buttons */}
@@ -124,18 +153,24 @@ export default function SolMedspaLanding() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    disabled={isSubmitting}
                     className="flex-1 h-12 border-yellow-200 focus:border-yellow-400 focus:ring-yellow-200 bg-white/80 backdrop-blur-sm"
                   />
                   <Button
                     type="submit"
-                    className="h-12 px-8 bg-gradient-to-r from-yellow-600 to-orange-500 hover:from-orange-600 hover:to-orange-700 text-white font-medium shadow-lg"
+                    disabled={isSubmitting}
+                    className="h-12 px-8 bg-gradient-to-r from-yellow-600 to-orange-500 hover:from-orange-600 hover:to-orange-700 text-white font-medium shadow-lg disabled:opacity-50"
                   >
-                    Notify Me
+                    {isSubmitting ? "Sending..." : "Notify Me"}
                   </Button>
                 </div>
-                {isSubmitted && (
-                  <p className="text-green-600 text-sm mt-2 text-center lg:text-left">
-                    Thank you! We'll notify you when we launch.
+                {message && (
+                  <p
+                    className={`text-sm mt-2 text-center lg:text-left ${
+                      message.type === "success" ? "text-green-600" : "text-red-600"
+                    }`}
+                  >
+                    {message.text}
                   </p>
                 )}
               </form>
@@ -145,7 +180,7 @@ export default function SolMedspaLanding() {
               {/* Main Hero Image */}
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-200 to-orange-300 shadow-2xl">
                 <Image
-                  src="/placeholder.svg?height=500&width=400&text=Beautiful+Woman+Spa+Treatment"
+                  src="/images/hero-main-treatment.jpeg"
                   alt="Beautiful woman receiving spa treatment"
                   width={400}
                   height={500}
@@ -155,11 +190,6 @@ export default function SolMedspaLanding() {
               </div>
 
               {/* Floating Secondary Images */}
-              
-
-              
-
-              {/* Decorative Elements */}
               <div className="absolute top-1/4 -left-4 w-8 h-8 bg-yellow-300/60 rounded-full blur-sm"></div>
               <div className="absolute top-1/2 -right-2 w-6 h-6 bg-orange-300/60 rounded-full blur-sm"></div>
               <div className="absolute bottom-1/4 -left-2 w-4 h-4 bg-rose-300/60 rounded-full blur-sm"></div>
@@ -200,7 +230,7 @@ export default function SolMedspaLanding() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/placeholder.svg?height=400&width=600&text=Spa+Interior+or+Treatment+Room"
+                  src="/images/spa-interior-treatment-room.jpeg"
                   alt="Spa interior or treatment room"
                   width={600}
                   height={400}
@@ -295,19 +325,30 @@ export default function SolMedspaLanding() {
             {[1, 2, 3].map((index) => (
               <div
                 key={index}
-                className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-50 to-yellow-100"
+                className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-50 to-yellow-100 shadow-lg hover:shadow-xl transition-shadow"
               >
                 <Image
-                  src={`/placeholder.svg?height=400&width=400&text=Spa+Treatment+${index}`}
-                  alt={`Spa treatment ${index}`}
+                  src={
+                    index === 1
+                      ? "/images/gallery-facial-treatment.jpeg"
+                      : index === 2
+                        ? "/images/gallery-laser-treatment.jpeg"
+                        : "/images/gallery-spa-relaxation.jpeg"
+                  }
+                  alt={
+                    index === 1
+                      ? "Professional facial treatment"
+                      : index === 2
+                        ? "Modern laser treatment equipment"
+                        : "Luxury spa relaxation area"
+                  }
                   width={400}
                   height={400}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <span className="text-white text-lg font-medium bg-black/30 px-4 py-2 rounded-full backdrop-blur-sm">
-                    Coming Soon
-                  </span>
+                {/* Subtle bottom gradient with coming soon text */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                  <span className="text-white text-sm font-medium">Coming Soon</span>
                 </div>
               </div>
             ))}
@@ -337,7 +378,7 @@ export default function SolMedspaLanding() {
             </Button>
           </div>
 
-          <p className="text-sm text-gray-500">© 2024 Sol Medspa. All rights reserved.</p>
+          <p className="text-sm text-gray-500">© 2025 Sol Medspa. All rights reserved.</p>
         </div>
       </footer>
     </div>
