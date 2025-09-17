@@ -14,12 +14,15 @@ const config: Config = {
         serif: ["var(--font-playfair)"],
       },
       colors: {
-        // Sol Medspa brand colors
+        // Sol Medspa brand colors with warm brown accent
         "sol-gold": "#D4AF37",
         "sol-mustard": "#E6B800",
         "sol-yellow": "#FFF8DC",
         "sol-salmon": "#FFA07A",
         "sol-cream": "#FDF5E6",
+        "sol-brown": "#C4956C",
+        "sol-brown-dark": "#B8865F",
+        "sol-brown-light": "#D4A373",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

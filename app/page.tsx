@@ -50,9 +50,12 @@ export default function SolMedspaLanding() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-yellow-50/60 via-orange-50/30 to-white">
+    <div className="min-h-screen" style={{ backgroundColor: "#F5F1EB" }}>
       {/* Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-yellow-400/95 via-orange-400/95 to-rose-400/95 backdrop-blur-md border-b border-yellow-200/50">
+      <header
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-amber-900/20 shadow-sm"
+        style={{ backgroundColor: "#C4956C" }}
+      >
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             {/* Sol MedSpa Logo */}
@@ -66,7 +69,7 @@ export default function SolMedspaLanding() {
               />
               <div className="flex flex-col">
                 <span className="text-white font-serif text-lg md:text-2xl font-bold tracking-wide">Sol MedSpa</span>
-                <span className="text-white/80 text-xs md:text-sm font-light tracking-wider hidden sm:block">
+                <span className="text-white/90 text-xs md:text-sm font-light tracking-wider hidden sm:block">
                   Radiant Skin. Reimagined.
                 </span>
               </div>
@@ -125,23 +128,17 @@ export default function SolMedspaLanding() {
 
       {/* Hero Section */}
       <section id="hero" className="relative px-4 py-12 md:py-20 overflow-hidden mt-20">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/60 via-orange-50/40 to-rose-100/30"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-yellow-200/20 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-orange-200/20 to-transparent rounded-full blur-3xl"></div>
-
         <div className="max-w-6xl mx-auto relative z-10">
-          {/* Logo */}
-          <div className="text-center mb-12"></div>
-
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h2 className="text-4xl md:text-6xl font-serif text-gray-800 mb-6 leading-tight">
+              <h2 className="text-4xl md:text-6xl font-serif text-stone-800 mb-6 leading-tight">
                 Radiant Skin.
-                <span className="block text-orange-600">Reimagined.</span>
+                <span className="block" style={{ color: "#E55B13" }}>
+                  Reimagined.
+                </span>
               </h2>
 
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-stone-600 mb-8 leading-relaxed">
                 Sol Medspa is coming soon – your oasis for rejuvenation and wellness.
               </p>
 
@@ -155,12 +152,13 @@ export default function SolMedspaLanding() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     disabled={isSubmitting}
-                    className="flex-1 h-12 border-yellow-200 focus:border-yellow-400 focus:ring-yellow-200 bg-white/80 backdrop-blur-sm"
+                    className="flex-1 h-12 border-stone-300 focus:border-stone-500 focus:ring-stone-200 bg-white"
                   />
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="h-12 px-8 bg-gradient-to-r from-yellow-600 to-orange-500 hover:from-orange-600 hover:to-orange-700 text-white font-medium shadow-lg disabled:opacity-50"
+                    className="h-12 px-8 text-white font-medium shadow-lg disabled:opacity-50 hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "#C4956C" }}
                   >
                     {isSubmitting ? "Sending..." : "Notify Me"}
                   </Button>
@@ -179,7 +177,7 @@ export default function SolMedspaLanding() {
 
             <div className="relative">
               {/* Main Hero Image */}
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-200 to-orange-300 shadow-2xl">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-200 shadow-2xl">
                 <Image
                   src="/images/hero-main-treatment.jpeg"
                   alt="Beautiful woman receiving spa treatment"
@@ -189,11 +187,6 @@ export default function SolMedspaLanding() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
               </div>
-
-              {/* Floating Secondary Images */}
-              <div className="absolute top-1/4 -left-4 w-8 h-8 bg-yellow-300/60 rounded-full blur-sm"></div>
-              <div className="absolute top-1/2 -right-2 w-6 h-6 bg-orange-300/60 rounded-full blur-sm"></div>
-              <div className="absolute bottom-1/4 -left-2 w-4 h-4 bg-rose-300/60 rounded-full blur-sm"></div>
             </div>
           </div>
         </div>
@@ -202,21 +195,24 @@ export default function SolMedspaLanding() {
       {/* About Sol Medspa */}
       <section id="about" className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-3xl font-serif text-gray-800 mb-8">About Sol Medspa</h3>
+          <h3 className="text-3xl font-serif text-stone-800 mb-8">About Sol Medspa</h3>
 
-          <p className="text-lg text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg text-stone-600 mb-12 leading-relaxed max-w-3xl mx-auto">
             Sol Medspa blends modern science with luxurious treatments to bring out your natural glow. We're getting
             ready to offer skincare, injectables, and self-care designed around you.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {["Facials & Peels", "Botox & Fillers", "Laser Treatments", "Skin Rejuvenation"].map((treatment, index) => (
-              <Card key={index} className="border-yellow-100 hover:border-yellow-200 transition-colors">
+              <Card key={index} className="border-stone-200 hover:border-stone-300 transition-colors bg-stone-50/50">
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-100 to-orange-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Sparkles className="w-6 h-6 text-orange-600" />
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4"
+                    style={{ backgroundColor: "#C4956C20" }}
+                  >
+                    <Sparkles className="w-6 h-6" style={{ color: "#C4956C" }} />
                   </div>
-                  <h4 className="font-medium text-gray-800">{treatment}</h4>
+                  <h4 className="font-medium text-stone-800">{treatment}</h4>
                 </CardContent>
               </Card>
             ))}
@@ -224,8 +220,8 @@ export default function SolMedspaLanding() {
         </div>
       </section>
 
-      {/* New Image + Info Section */}
-      <section id="experience" className="py-16 px-4 bg-gradient-to-r from-yellow-50/30 to-orange-50/20">
+      {/* Experience Luxury Redefined */}
+      <section id="experience" className="py-16 px-4" style={{ backgroundColor: "#F5F1EB" }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -238,39 +234,46 @@ export default function SolMedspaLanding() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Decorative accent */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-yellow-200 to-orange-300 rounded-full blur-xl opacity-60"></div>
             </div>
 
             <div className="lg:pl-8">
-              <h3 className="text-3xl font-serif text-gray-800 mb-6">Experience Luxury Redefined</h3>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              <h3 className="text-3xl font-serif text-stone-800 mb-6">Experience Luxury Redefined</h3>
+              <p className="text-lg text-stone-600 mb-6 leading-relaxed">
                 Step into a world where cutting-edge technology meets serene luxury. Our state-of-the-art facility is
                 designed to provide you with the ultimate in comfort and results.
               </p>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <p className="text-stone-600 mb-8 leading-relaxed">
                 From our carefully curated treatment rooms to our advanced equipment, every detail has been thoughtfully
                 selected to ensure your experience exceeds expectations.
               </p>
 
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: "#C4956C" }}
+                  >
                     <Sparkles className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-gray-700">Premium treatment suites</span>
+                  <span className="text-stone-700">Premium treatment suites</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: "#C4956C" }}
+                  >
                     <Sparkles className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-gray-700">Advanced medical-grade equipment</span>
+                  <span className="text-stone-700">Advanced medical-grade equipment</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: "#C4956C" }}
+                  >
                     <Sparkles className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-gray-700">Personalized consultation process</span>
+                  <span className="text-stone-700">Personalized consultation process</span>
                 </div>
               </div>
             </div>
@@ -279,37 +282,46 @@ export default function SolMedspaLanding() {
       </section>
 
       {/* Why Choose Sol */}
-      <section id="why-choose" className="py-16 px-4 bg-gradient-to-b from-yellow-50/40 to-orange-50/20">
+      <section id="why-choose" className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-serif text-gray-800 text-center mb-12">Why Choose Sol</h3>
+          <h3 className="text-3xl font-serif text-stone-800 text-center mb-12">Why Choose Sol</h3>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-yellow-100 to-orange-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Sun className="w-8 h-8 text-orange-600" />
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                style={{ backgroundColor: "#C4956C20" }}
+              >
+                <Sun className="w-8 h-8" style={{ color: "#C4956C" }} />
               </div>
-              <h4 className="text-xl font-serif text-gray-800 mb-4">Natural Glow Treatments</h4>
-              <p className="text-gray-600 leading-relaxed">
+              <h4 className="text-xl font-serif text-stone-800 mb-4">Natural Glow Treatments</h4>
+              <p className="text-stone-600 leading-relaxed">
                 Enhance your natural beauty with treatments designed to bring out your inner radiance.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-yellow-100 to-orange-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Sparkles className="w-8 h-8 text-orange-600" />
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                style={{ backgroundColor: "#C4956C20" }}
+              >
+                <Sparkles className="w-8 h-8" style={{ color: "#C4956C" }} />
               </div>
-              <h4 className="text-xl font-serif text-gray-800 mb-4">Clinically Trained Staff</h4>
-              <p className="text-gray-600 leading-relaxed">
+              <h4 className="text-xl font-serif text-stone-800 mb-4">Clinically Trained Staff</h4>
+              <p className="text-stone-600 leading-relaxed">
                 Our expert team combines medical expertise with a passion for aesthetic excellence.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-yellow-100 to-orange-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart className="w-8 h-8 text-orange-600" />
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                style={{ backgroundColor: "#C4956C20" }}
+              >
+                <Heart className="w-8 h-8" style={{ color: "#C4956C" }} />
               </div>
-              <h4 className="text-xl font-serif text-gray-800 mb-4">Luxurious Experience</h4>
-              <p className="text-gray-600 leading-relaxed">
+              <h4 className="text-xl font-serif text-stone-800 mb-4">Luxurious Experience</h4>
+              <p className="text-stone-600 leading-relaxed">
                 Indulge in a serene environment where every detail is crafted for your comfort.
               </p>
             </div>
@@ -318,15 +330,15 @@ export default function SolMedspaLanding() {
       </section>
 
       {/* Image Gallery */}
-      <section id="gallery" className="py-16 px-4 bg-white">
+      <section id="gallery" className="py-16 px-4" style={{ backgroundColor: "#F5F1EB" }}>
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-serif text-gray-800 text-center mb-12">Coming Soon</h3>
+          <h3 className="text-3xl font-serif text-stone-800 text-center mb-12">Coming Soon</h3>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[1, 2, 3].map((index) => (
               <div
                 key={index}
-                className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-50 to-yellow-100 shadow-lg hover:shadow-xl transition-shadow"
+                className="relative aspect-square rounded-2xl overflow-hidden bg-stone-100 shadow-lg hover:shadow-xl transition-shadow"
               >
                 <Image
                   src={
@@ -358,28 +370,31 @@ export default function SolMedspaLanding() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-gradient-to-b from-yellow-50/30 to-orange-100/40">
+      <footer className="py-12 px-4" style={{ backgroundColor: "#F5F1EB" }}>
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-100 to-orange-200 rounded-full mb-6">
-            <Sun className="w-8 h-8 text-orange-600" />
+          <div
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6"
+            style={{ backgroundColor: "#C4956C20" }}
+          >
+            <Sun className="w-8 h-8" style={{ color: "#C4956C" }} />
           </div>
 
-          <h4 className="text-2xl font-serif text-gray-800 mb-2">Sol Medspa</h4>
-          <p className="text-gray-600 mb-6">Launching Soon in Your City</p>
+          <h4 className="text-2xl font-serif text-stone-800 mb-2">Sol Medspa</h4>
+          <p className="text-stone-600 mb-6">Launching Soon in Your City</p>
 
           <div className="flex justify-center space-x-4 mb-8">
-            <Button variant="ghost" size="icon" className="text-orange-600 hover:text-orange-700 hover:bg-yellow-100">
+            <Button variant="ghost" size="icon" className="hover:bg-white/20" style={{ color: "#C4956C" }}>
               <Instagram className="w-5 h-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="text-orange-600 hover:text-orange-700 hover:bg-yellow-100">
+            <Button variant="ghost" size="icon" className="hover:bg-white/20" style={{ color: "#C4956C" }}>
               <Facebook className="w-5 h-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="text-orange-600 hover:text-orange-700 hover:bg-yellow-100">
+            <Button variant="ghost" size="icon" className="hover:bg-white/20" style={{ color: "#C4956C" }}>
               <Twitter className="w-5 h-5" />
             </Button>
           </div>
 
-          <p className="text-sm text-gray-500">© 2025 Sol Medspa. All rights reserved.</p>
+          <p className="text-sm text-stone-500">© 2025 Sol Medspa. All rights reserved.</p>
         </div>
       </footer>
     </div>
