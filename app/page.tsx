@@ -52,76 +52,80 @@ export default function SolMedspaLanding() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F5F1EB" }}>
       {/* Header Navigation */}
-      <header
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-amber-900/20 shadow-sm"
-        style={{ backgroundColor: "#C4956C" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 py-3">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-stone-200/50 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Sol MedSpa Logo */}
-            <div className="flex items-center">
-              <Image
-                src="/images/sol-logo.svg"
-                alt="Sol MedSpa Logo"
-                width={240}
-                height={144}
-                className="h-12 md:h-16 w-auto mr-2 md:mr-3"
-              />
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-100 to-orange-200 flex items-center justify-center">
+                <Sun className="w-6 h-6 text-amber-700" />
+              </div>
               <div className="flex flex-col">
-                <span className="text-white font-serif text-lg md:text-2xl font-bold tracking-wide">Sol MedSpa</span>
-                <span className="text-white/90 text-xs md:text-sm font-light tracking-wider hidden sm:block">
+                <span className="text-stone-800 font-serif text-xl font-bold tracking-wide">Sol MedSpa</span>
+                <span className="text-stone-500 text-xs font-light tracking-wider hidden sm:block">
                   Radiant Skin. Reimagined.
                 </span>
               </div>
             </div>
 
             {/* Navigation Buttons */}
-            <nav className="hidden md:flex items-center space-x-2">
+            <nav className="hidden md:flex items-center space-x-1">
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("hero")}
-                className="text-white hover:bg-white/20 hover:text-white font-medium px-4 py-2"
+                className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
               >
                 Home
               </Button>
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("about")}
-                className="text-white hover:bg-white/20 hover:text-white font-medium px-4 py-2"
+                className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
               >
                 About
               </Button>
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("experience")}
-                className="text-white hover:bg-white/20 hover:text-white font-medium px-4 py-2"
+                className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
               >
                 Experience
               </Button>
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("why-choose")}
-                className="text-white hover:bg-white/20 hover:text-white font-medium px-4 py-2"
+                className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
               >
                 Why Sol
               </Button>
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("gallery")}
-                className="text-white hover:bg-white/20 hover:text-white font-medium px-4 py-2"
+                className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
               >
                 Gallery
               </Button>
             </nav>
 
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              className="md:hidden text-white hover:bg-white/20"
-              onClick={() => scrollToSection("about")}
-            >
-              <ChevronDown className="w-6 h-6" />
-            </Button>
+            {/* CTA Button & Mobile Menu */}
+            <div className="flex items-center space-x-3">
+              <Button
+                className="hidden sm:flex items-center px-6 py-2 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+                style={{ backgroundColor: "#C4956C" }}
+                onClick={() => scrollToSection("hero")}
+              >
+                Get Notified
+              </Button>
+
+              {/* Mobile Menu Button */}
+              <Button
+                variant="ghost"
+                className="md:hidden text-stone-600 hover:text-stone-800 hover:bg-stone-100 p-2 rounded-full"
+                onClick={() => scrollToSection("about")}
+              >
+                <ChevronDown className="w-5 h-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </header>
