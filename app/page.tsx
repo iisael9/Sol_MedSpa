@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
-import { Sun, Sparkles, Heart, Instagram, Facebook, Twitter, ChevronDown, HomeIcon, Calendar, Star } from 'lucide-react'
+import { Sun, Sparkles, Heart, Instagram, Facebook, Twitter, ChevronDown, HomeIcon, Calendar, Star, X } from 'lucide-react'
 import Image from "next/image"
 import { submitEmail } from "./actions/email"
 import Link from "next/link"
@@ -17,6 +17,7 @@ export default function SolMedspaLanding() {
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null)
   const [sliderPosition, setSliderPosition] = useState(50)
   const [isDragging, setIsDragging] = useState(false)
+  const [showComingSoonModal, setShowComingSoonModal] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -71,6 +72,11 @@ export default function SolMedspaLanding() {
     }
   }
 
+  const handleComingSoonClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setShowComingSoonModal(true)
+  }
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F5F1EB" }}>
       {/* Header Navigation */}
@@ -112,22 +118,6 @@ export default function SolMedspaLanding() {
               >
                 Concierge Experience
               </Button>
-              <Link href="/care">
-                <Button
-                  variant="ghost"
-                  className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
-                >
-                  Care
-                </Button>
-              </Link>
-              <Link href="/pricing">
-                <Button
-                  variant="ghost"
-                  className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
-                >
-                  Pricing
-                </Button>
-              </Link>
               <Link href="/before-after">
                 <Button
                   variant="ghost"
@@ -136,24 +126,36 @@ export default function SolMedspaLanding() {
                   Before/After
                 </Button>
               </Link>
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("appointments")}
-                className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
+              <button
+                onClick={handleComingSoonClick}
+                className="relative text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
               >
-                Appointments
-              </Button>
+                Care
+                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
+                  SOON
+                </span>
+              </button>
+              <button
+                onClick={handleComingSoonClick}
+                className="relative text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
+              >
+                Pricing
+                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
+                  SOON
+                </span>
+              </button>
             </nav>
 
             {/* CTA Button & Mobile Menu */}
             <div className="flex items-center space-x-3">
-              <Button
-                className="hidden sm:flex items-center px-6 py-2 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-                style={{ backgroundColor: "#C4956C" }}
-                onClick={() => scrollToSection("hero")}
-              >
-                Get Notified
-              </Button>
+              <Link href="/contact">
+                <Button
+                  className="hidden sm:flex items-center px-6 py-2 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+                  style={{ backgroundColor: "#C4956C" }}
+                >
+                  Contact
+                </Button>
+              </Link>
 
               {/* Mobile Menu Button */}
               <Button
@@ -184,48 +186,28 @@ export default function SolMedspaLanding() {
               </p>
 
               <p className="text-xl text-stone-600 mb-8 leading-relaxed">
-                Sol Medspa - elevate your glow, in the confort of your home. Host your own botox party. 
+                Sol Medspa - elevate your glow, in the comfort of your home. Host your own botox party. 
               </p>
 
-              {/* Email Capture */}
-              <form onSubmit={handleSubmit} className="max-w-md mx-auto lg:mx-0">
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email to be the first to know"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    disabled={isSubmitting}
-                    className="flex-1 h-12 border-stone-300 focus:border-stone-500 focus:ring-stone-200 bg-white"
-                  />
+              {/* Book a Session Button */}
+              <div className="flex justify-center lg:justify-start">
+                <Link href="/contact">
                   <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="h-12 px-8 text-white font-medium shadow-lg disabled:opacity-50 hover:opacity-90 transition-opacity"
+                    className="h-14 px-10 text-lg text-white font-medium shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:scale-105"
                     style={{ backgroundColor: "#C4956C" }}
                   >
-                    {isSubmitting ? "Sending..." : "Notify Me"}
+                    Book a Session
                   </Button>
-                </div>
-                {message && (
-                  <p
-                    className={`text-sm mt-2 text-center lg:text-left ${
-                      message.type === "success" ? "text-green-600" : "text-red-600"
-                    }`}
-                  >
-                    {message.text}
-                  </p>
-                )}
-              </form>
+                </Link>
+              </div>
             </div>
 
             <div className="relative">
               {/* Main Hero Image */}
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-200 shadow-2xl">
                 <Image
-                  src="/radiant-woman-after-botox-glowing-skin-natural-beauty.jpg"
-                  alt="Beautiful woman with radiant skin after botox treatment"
+                  src="/images/design-mode/v0_image-2.png"
+                  alt="Luxury medspa beauty party at home - male doctor providing gentle skin consultation to woman while two friends chat in elegant modern living room with warm beige tones"
                   width={400}
                   height={500}
                   className="w-full h-full object-cover"
@@ -574,57 +556,23 @@ export default function SolMedspaLanding() {
         </div>
       </section>
 
-      <section id="appointments" className="py-16 px-4 bg-white">
+      {/* Ready to Transform CTA Section */}
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <div
-            className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
-            style={{ backgroundColor: "#C4956C20" }}
-          >
-            <Calendar className="w-8 h-8" style={{ color: "#C4956C" }} />
-          </div>
-          
-          <h3 className="text-3xl font-serif text-stone-800 mb-6">Book Your Appointment</h3>
-          <p className="text-lg text-stone-600 mb-8 leading-relaxed max-w-2xl mx-auto">
-            Ready to experience the Sol Medspa difference? Schedule your personalized consultation and discover how our concierge service can transform your aesthetic care routine.
+          <h3 className="text-4xl md:text-5xl font-serif text-stone-800 mb-6">
+            Ready to Transform Your Look?
+          </h3>
+          <p className="text-xl text-stone-600 mb-10 leading-relaxed">
+            Experience the Sol Medspa difference. Book your session today.
           </p>
-
-          {/* Email Signup for Launch Notification */}
-          <div className="max-w-md mx-auto mb-8">
-            <form onSubmit={handleSubmit}>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Input
-                  type="email"
-                  placeholder="Enter your email to book when we launch"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  disabled={isSubmitting}
-                  className="flex-1 h-12 border-stone-300 focus:border-stone-500 focus:ring-stone-200 bg-white"
-                />
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="h-12 px-8 text-white font-medium shadow-lg disabled:opacity-50 hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: "#C4956C" }}
-                >
-                  {isSubmitting ? "Sending..." : "Get Notified"}
-                </Button>
-              </div>
-              {message && (
-                <p
-                  className={`text-sm mt-2 text-center ${
-                    message.type === "success" ? "text-green-600" : "text-red-600"
-                  }`}
-                >
-                  {message.text}
-                </p>
-              )}
-            </form>
-          </div>
-
-          <p className="text-sm text-stone-500">
-            Square booking integration coming soon. Be the first to know when appointments open!
-          </p>
+          <Link href="/contact">
+            <Button
+              className="h-14 px-12 text-lg text-white font-medium shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:scale-105"
+              style={{ backgroundColor: "#C4956C" }}
+            >
+              Book a Session Now
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -656,6 +604,42 @@ export default function SolMedspaLanding() {
           <p className="text-sm text-stone-500">© 2025 Sol Medspa. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Coming Soon Modal */}
+      {showComingSoonModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 relative">
+            <button
+              onClick={() => setShowComingSoonModal(false)}
+              className="absolute top-4 right-4 text-stone-400 hover:text-stone-600 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: "#FFF4E6" }}>
+                <Sun className="w-8 h-8" style={{ color: "#C4956C" }} />
+              </div>
+              
+              <h3 className="text-2xl font-serif font-bold text-stone-800 mb-3">
+                Coming Soon
+              </h3>
+              
+              <p className="text-stone-600 mb-6 leading-relaxed">
+                This page is currently being prepared. Check back soon for updates, or contact us directly for more information.
+              </p>
+              
+              <Button
+                onClick={() => setShowComingSoonModal(false)}
+                className="w-full text-white font-medium rounded-full py-3 hover:shadow-lg transition-all duration-200"
+                style={{ backgroundColor: "#C4956C" }}
+              >
+                Got It
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

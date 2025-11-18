@@ -4,53 +4,13 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
+import { Navigation } from "@/components/navigation"
 import { Sparkles, Sun } from 'lucide-react'
 
 export default function PricingPage() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F5F1EB" }}>
-      {/* Header Navigation */}
-      <header
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b shadow-sm"
-        style={{ backgroundColor: "rgba(255, 255, 255, 0.8)", borderColor: "#e7e5e4" }}
-      >
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all group-hover:scale-105">
-                <Sun className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-stone-800 tracking-wide">SOL MEDSPA</span>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/#services" className="text-stone-600 hover:text-stone-900 transition-colors font-medium">
-                Services
-              </Link>
-              <Link href="/#experience" className="text-stone-600 hover:text-stone-900 transition-colors font-medium">
-                Experience
-              </Link>
-              <Link href="/care" className="text-stone-600 hover:text-stone-900 transition-colors font-medium">
-                Care
-              </Link>
-              <Link href="/pricing" className="text-stone-600 hover:text-stone-900 transition-colors font-medium">
-                Pricing
-              </Link>
-              <Link href="/#contact" className="text-stone-600 hover:text-stone-900 transition-colors font-medium">
-                Contact
-              </Link>
-              <Button
-                className="rounded-full px-6 py-2 font-semibold shadow-md hover:shadow-lg transition-all hover:scale-105"
-                style={{ backgroundColor: "#C4956C" }}
-              >
-                Get Notified
-              </Button>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="relative h-[500px] overflow-hidden mt-20">

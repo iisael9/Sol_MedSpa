@@ -4,7 +4,8 @@ import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Sun, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Sun } from 'lucide-react'
+import { Navigation } from "@/components/navigation"
 
 // Image Comparison Slider Component
 function ImageComparisonSlider({
@@ -141,30 +142,7 @@ export default function BeforeAfterPage() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F5F1EB" }}>
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-stone-200/50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-100 to-orange-200 flex items-center justify-center">
-                <Sun className="w-6 h-6 text-amber-700" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-stone-800 font-serif text-xl font-bold tracking-wide">Sol MedSpa</span>
-              </div>
-            </Link>
-
-            <Link href="/">
-              <Button
-                variant="ghost"
-                className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full"
-              >
-                Back to Home
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4">
@@ -202,7 +180,7 @@ export default function BeforeAfterPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="text-3xl font-serif text-stone-800 mb-6">Ready to Transform Your Look?</h3>
           <p className="text-lg text-stone-600 mb-8">
-            Experience the Sol Medspa difference. Book your consultation today.
+            Experience the Sol Medspa difference. Book your session today.
           </p>
           <Link href="/">
             <Button

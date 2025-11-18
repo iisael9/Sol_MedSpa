@@ -2,13 +2,24 @@
 
 import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const apiKey = process.env.RESEND_API_KEY
+
+if (!apiKey) {
+  console.error("[v0] RESEND_API_KEY environment variable is not set")
+}
+
+const resend = apiKey ? new Resend(apiKey) : null
 
 export async function submitEmail(formData: FormData) {
   const email = formData.get("email") as string
 
   if (!email) {
     return { success: false, message: "Email is required" }
+  }
+
+  if (!resend) {
+    console.error("[v0] Resend not initialized - API key missing")
+    return { success: false, message: "Email service not configured. Please contact support." }
   }
 
   try {

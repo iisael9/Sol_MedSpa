@@ -2,7 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, Sparkles } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
+import { Navigation } from "@/components/navigation"
 
 export default function CarePage() {
   const careInstructions = [
@@ -40,8 +41,10 @@ export default function CarePage() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F5F1EB" }}>
+      <Navigation />
+
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
+      <section className="relative h-[60vh] min-h-[500px] overflow-hidden mt-20">
         <Image
           src="/elegant-woman-beauty-portrait-close-up-face.jpg"
           alt="Elegance & Care"
@@ -57,7 +60,7 @@ export default function CarePage() {
             variant="ghost" 
             className="text-white hover:text-white hover:bg-white/20 backdrop-blur-sm"
           >
-            <ArrowLeft className="mr-2 h-4 w-4" />
+            {/* <ArrowLeft className="mr-2 h-4 w-4" /> */}
             Back to Home
           </Button>
         </Link>
