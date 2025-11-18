@@ -1,13 +1,14 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ChevronDown, X } from 'lucide-react'
+import { ChevronDown, X, Menu, Phone, Mail, MapPin } from 'lucide-react'
 import Link from "next/link"
 import { useState } from "react"
 import Image from "next/image"
 
 export function Navigation() {
   const [showComingSoonModal, setShowComingSoonModal] = useState(false)
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
   
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -19,6 +20,7 @@ export function Navigation() {
   const handleComingSoonClick = (e: React.MouseEvent) => {
     e.preventDefault()
     setShowComingSoonModal(true)
+    setShowMobileMenu(false)
   }
 
   return (
@@ -43,7 +45,6 @@ export function Navigation() {
                 </span>
               </div>
             </Link>
-            {/* </CHANGE> */}
 
             <nav className="hidden md:flex items-center space-x-1">
               <Link href="/">
@@ -113,13 +114,121 @@ export function Navigation() {
               <Button
                 variant="ghost"
                 className="md:hidden text-stone-600 hover:text-stone-800 hover:bg-stone-100 p-2 rounded-full"
+                onClick={() => setShowMobileMenu(!showMobileMenu)}
               >
-                <ChevronDown className="w-5 h-5" />
+                {showMobileMenu ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </Button>
             </div>
           </div>
         </div>
       </header>
+
+      {showMobileMenu && (
+        <div className="fixed top-[88px] left-0 right-0 z-40 md:hidden bg-white shadow-lg border-t border-stone-200">
+          <div className="max-w-7xl mx-auto px-6 py-6">
+            {/* Navigation Links */}
+            <div className="space-y-2 mb-6">
+              <Link href="/" onClick={() => setShowMobileMenu(false)}>
+                <Button
+                  variant="ghost"
+                  className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 justify-start"
+                >
+                  Home
+                </Button>
+              </Link>
+              <Link href="/#services" onClick={() => setShowMobileMenu(false)}>
+                <Button
+                  variant="ghost"
+                  className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 justify-start"
+                >
+                  Services
+                </Button>
+              </Link>
+              <Link href="/#concierge-experience" onClick={() => setShowMobileMenu(false)}>
+                <Button
+                  variant="ghost"
+                  className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 justify-start"
+                >
+                  Concierge Experience
+                </Button>
+              </Link>
+              <Link href="/before-after" onClick={() => setShowMobileMenu(false)}>
+                <Button
+                  variant="ghost"
+                  className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 justify-start"
+                >
+                  Before/After
+                </Button>
+              </Link>
+              <button
+                onClick={handleComingSoonClick}
+                className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 relative"
+              >
+                Care
+                <span className="absolute right-4 top-1/2 -translate-y-1/2 bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
+                  SOON
+                </span>
+              </button>
+              <button
+                onClick={handleComingSoonClick}
+                className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 relative"
+              >
+                Pricing
+                <span className="absolute right-4 top-1/2 -translate-y-1/2 bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
+                  SOON
+                </span>
+              </button>
+            </div>
+
+            {/* Contact Information */}
+            <div className="border-t border-stone-200 pt-6 space-y-4">
+              <h3 className="text-sm font-semibold text-stone-800 mb-3">Contact Information</h3>
+              
+              <a href="mailto:admin@sol-medspa.com" className="flex items-center space-x-3 text-stone-600 hover:text-stone-800 transition-colors">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#F5F1EB" }}>
+                  <Mail className="w-5 h-5" style={{ color: "#C4956C" }} />
+                </div>
+                <div>
+                  <div className="text-xs text-stone-500">Email</div>
+                  <div className="text-sm font-medium">admin@sol-medspa.com</div>
+                </div>
+              </a>
+
+              <a href="tel:+15551234567" className="flex items-center space-x-3 text-stone-600 hover:text-stone-800 transition-colors">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#F5F1EB" }}>
+                  <Phone className="w-5 h-5" style={{ color: "#C4956C" }} />
+                </div>
+                <div>
+                  <div className="text-xs text-stone-500">Phone</div>
+                  <div className="text-sm font-medium">+1 (555) 123-4567</div>
+                </div>
+              </a>
+
+              <div className="flex items-center space-x-3 text-stone-600">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#F5F1EB" }}>
+                  <MapPin className="w-5 h-5" style={{ color: "#C4956C" }} />
+                </div>
+                <div>
+                  <div className="text-xs text-stone-500">Location</div>
+                  <div className="text-sm font-medium">Los Angeles & Surrounding Areas</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Button */}
+            <div className="mt-6">
+              <Link href="/contact" onClick={() => setShowMobileMenu(false)}>
+                <Button
+                  className="w-full text-white font-medium rounded-full py-3 shadow-lg hover:shadow-xl transition-all duration-200"
+                  style={{ backgroundColor: "#C4956C" }}
+                >
+                  Book a Session
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       {showComingSoonModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
@@ -141,7 +250,6 @@ export function Navigation() {
                   className="w-44 h-44"
                 />
               </div>
-              {/* </CHANGE> */}
               
               <h3 className="text-2xl font-serif font-bold text-stone-800 mb-3">
                 Coming Soon

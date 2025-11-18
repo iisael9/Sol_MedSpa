@@ -10,6 +10,7 @@ import { Sparkles, Heart, Instagram, Facebook, Twitter, ChevronDown, HomeIcon, C
 import Image from "next/image"
 import { submitEmail } from "./actions/email"
 import Link from "next/link"
+import { Navigation } from "@/components/navigation"
 
 export default function SolMedspaLanding() {
   const [email, setEmail] = useState("")
@@ -80,101 +81,7 @@ export default function SolMedspaLanding() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F5F1EB" }}>
       {/* Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-stone-200/50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Sol MedSpa Logo */}
-            <div className="flex items-center space-x-3">
-              <Image 
-                src="/images/sol-logo-icon.svg"
-                alt="Sol MedSpa Logo"
-                width={125}
-                height={125}
-                className="w-26 h-20"
-              />
-              <div className="flex flex-col">
-                <span className="text-stone-800 font-serif text-xl font-bold tracking-wide">
-                  <span className="font-bold italic">Sol</span> MedSpa
-                </span>
-                <span className="text-stone-500 text-xs font-light tracking-wider hidden sm:block">
-                  Radiant Skin. Reimagined.
-                </span>
-              </div>
-            </div>
-
-            <nav className="hidden md:flex items-center space-x-1">
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("hero")}
-                className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
-              >
-                Home
-              </Button>
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("services")}
-                className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
-              >
-                Services
-              </Button>
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("concierge-experience")}
-                className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
-              >
-                Concierge Experience
-              </Button>
-              <Link href="/before-after">
-                <Button
-                  variant="ghost"
-                  className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
-                >
-                  Before/After
-                </Button>
-              </Link>
-              <button
-                onClick={handleComingSoonClick}
-                className="relative text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
-              >
-                Care
-                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
-                  SOON
-                </span>
-              </button>
-              <button
-                onClick={handleComingSoonClick}
-                className="relative text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
-              >
-                Pricing
-                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
-                  SOON
-                </span>
-              </button>
-            </nav>
-
-            {/* CTA Button & Mobile Menu */}
-            <div className="flex items-center space-x-3">
-              <Link href="/contact">
-                <Button
-                  className="hidden sm:flex items-center px-6 py-2 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-                  style={{ backgroundColor: "#C4956C" }}
-                >
-                  Contact
-                </Button>
-              </Link>
-
-              {/* Mobile Menu Button */}
-              <Button
-                variant="ghost"
-                className="md:hidden text-stone-600 hover:text-stone-800 hover:bg-stone-100 p-2 rounded-full"
-                onClick={() => scrollToSection("services")}
-              >
-                <ChevronDown className="w-5 h-5" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
       {/* Hero Section */}
       <section id="hero" className="relative px-4 py-12 md:py-20 overflow-hidden mt-20">
