@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Sun } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Navigation } from "@/components/navigation"
 
 // Image Comparison Slider Component
@@ -180,14 +180,14 @@ export default function BeforeAfterPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="text-3xl font-serif text-stone-800 mb-6">Ready to Transform Your Look?</h3>
           <p className="text-lg text-stone-600 mb-8">
-            Experience the Sol Medspa difference. Book your session today.
+            Experience the <span className="font-bold italic">Sol</span> Medspa difference. Book your session today.
           </p>
-          <Link href="/">
+          <Link href="/contact">
             <Button
               className="px-8 py-6 text-lg text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
               style={{ backgroundColor: "#C4956C" }}
             >
-              Get Notified When We Launch
+              Book a Session Now
             </Button>
           </Link>
         </div>
@@ -196,14 +196,19 @@ export default function BeforeAfterPage() {
       {/* Footer */}
       <footer className="py-12 px-4" style={{ backgroundColor: "#F5F1EB" }}>
         <div className="max-w-4xl mx-auto text-center">
-          <div
-            className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6"
-            style={{ backgroundColor: "#C4956C20" }}
-          >
-            <Sun className="w-8 h-8" style={{ color: "#C4956C" }} />
+          <div className="inline-flex items-center justify-center mb-6">
+            <Image 
+              src="/images/sol-logo-icon.svg"
+              alt="Sol MedSpa Logo"
+              width={160}
+              height={160}
+              className="w-40 h-40 opacity-100"
+            />
           </div>
-          <h4 className="text-2xl font-serif text-stone-800 mb-2">Sol Medspa</h4>
-          <p className="text-sm text-stone-500 mt-4">© 2025 Sol Medspa. All rights reserved.</p>
+          <h4 className="text-2xl font-serif text-stone-800 mb-2">
+            <span className="font-bold italic">Sol</span> Medspa
+          </h4>
+          <p className="text-sm text-stone-500 mt-4">© 2025 <span className="font-bold italic">Sol</span> Medspa. All rights reserved.</p>
         </div>
       </footer>
     </div>

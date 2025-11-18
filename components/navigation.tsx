@@ -1,9 +1,10 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Sun, ChevronDown, X } from 'lucide-react'
+import { ChevronDown, X } from 'lucide-react'
 import Link from "next/link"
 import { useState } from "react"
+import Image from "next/image"
 
 export function Navigation() {
   const [showComingSoonModal, setShowComingSoonModal] = useState(false)
@@ -25,18 +26,24 @@ export function Navigation() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-stone-200/50 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* Sol MedSpa Logo */}
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-100 to-orange-200 flex items-center justify-center">
-                <Sun className="w-6 h-6 text-amber-700" />
-              </div>
+              <Image 
+                src="/images/sol-logo-icon.svg"
+                alt="Sol MedSpa Logo"
+                width={80}
+                height={80}
+                className="w-20 h-20"
+              />
               <div className="flex flex-col">
-                <span className="text-stone-800 font-serif text-xl font-bold tracking-wide">Sol MedSpa</span>
+                <span className="text-stone-800 font-serif text-xl font-bold tracking-wide">
+                  <span className="font-bold italic">Sol</span> MedSpa
+                </span>
                 <span className="text-stone-500 text-xs font-light tracking-wider hidden sm:block">
                   Radiant Skin. Reimagined.
                 </span>
               </div>
             </Link>
+            {/* </CHANGE> */}
 
             <nav className="hidden md:flex items-center space-x-1">
               <Link href="/">
@@ -125,9 +132,16 @@ export function Navigation() {
             </button>
             
             <div className="text-center">
-              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: "#FFF4E6" }}>
-                <Sun className="w-8 h-8" style={{ color: "#C4956C" }} />
+              <div className="w-36 h-36 rounded-full mx-auto mb-4 flex items-center justify-center bg-white border-4 shadow-xl" style={{ borderColor: "#C4956C" }}>
+                <Image 
+                  src="/images/sol-logo-icon.svg"
+                  alt="Sol MedSpa Logo"
+                  width={180}
+                  height={180}
+                  className="w-44 h-44"
+                />
               </div>
+              {/* </CHANGE> */}
               
               <h3 className="text-2xl font-serif font-bold text-stone-800 mb-3">
                 Coming Soon

@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
-import { Sun, Sparkles, Heart, Instagram, Facebook, Twitter, ChevronDown, HomeIcon, Calendar, Star, X } from 'lucide-react'
+import { Sparkles, Heart, Instagram, Facebook, Twitter, ChevronDown, HomeIcon, Calendar, Star, X } from 'lucide-react'
 import Image from "next/image"
 import { submitEmail } from "./actions/email"
 import Link from "next/link"
@@ -85,11 +85,17 @@ export default function SolMedspaLanding() {
           <div className="flex items-center justify-between">
             {/* Sol MedSpa Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-100 to-orange-200 flex items-center justify-center">
-                <Sun className="w-6 h-6 text-amber-700" />
-              </div>
+              <Image 
+                src="/images/sol-logo-icon.svg"
+                alt="Sol MedSpa Logo"
+                width={125}
+                height={125}
+                className="w-26 h-20"
+              />
               <div className="flex flex-col">
-                <span className="text-stone-800 font-serif text-xl font-bold tracking-wide">Sol MedSpa</span>
+                <span className="text-stone-800 font-serif text-xl font-bold tracking-wide">
+                  <span className="font-bold italic">Sol</span> MedSpa
+                </span>
                 <span className="text-stone-500 text-xs font-light tracking-wider hidden sm:block">
                   Radiant Skin. Reimagined.
                 </span>
@@ -186,7 +192,7 @@ export default function SolMedspaLanding() {
               </p>
 
               <p className="text-xl text-stone-600 mb-8 leading-relaxed">
-                Sol Medspa - elevate your glow, in the comfort of your home. Host your own botox party. 
+                <span className="font-bold italic">Sol</span> Medspa - elevate your glow, in the comfort of your home. Host your own botox party. 
               </p>
 
               {/* Book a Session Button */}
@@ -224,7 +230,7 @@ export default function SolMedspaLanding() {
           <h3 className="text-3xl font-serif text-stone-800 mb-8">Our Services</h3>
 
           <p className="text-lg text-stone-600 mb-12 leading-relaxed max-w-3xl mx-auto">
-            Sol Medspa offers premium aesthetic treatments designed to enhance your natural beauty with the highest standards of care and expertise.
+            <span className="font-bold italic">Sol</span> Medspa offers premium aesthetic treatments designed to enhance your natural beauty with the highest standards of care and expertise.
           </p>
 
           {/* Core Services */}
@@ -382,7 +388,13 @@ export default function SolMedspaLanding() {
                     className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"
                     style={{ backgroundColor: "#C4956C" }}
                   >
-                    <Sun className="w-4 h-4 text-white" />
+                    <Image 
+                      src="/images/sol-logo-icon.svg"
+                      alt="Sol MedSpa Logo"
+                      width={16}
+                      height={16}
+                      className="w-4 h-4 brightness-0 invert"
+                    />
                   </div>
                   <span className="text-stone-700">Medical-grade equipment and premium products</span>
                 </div>
@@ -507,7 +519,9 @@ export default function SolMedspaLanding() {
 
                     {/* Doctor Info */}
                     <div>
-                      <h5 className="text-2xl font-serif text-stone-800 mb-2">Dr. Juan Vasquez</h5>
+                      <h5 className="text-2xl font-serif text-stone-800 mb-2">
+                        <span className="font-bold italic">Sol</span> Medspa
+                      </h5>
                       <p className="text-lg mb-6" style={{ color: "#C4956C" }}>Board-Certified Aesthetic Physician</p>
                       
                       <p className="text-stone-700 mb-4 leading-relaxed">
@@ -538,7 +552,13 @@ export default function SolMedspaLanding() {
                             className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                             style={{ backgroundColor: "#C4956C" }}
                           >
-                            <Sun className="w-4 h-4 text-white" />
+                            <Image 
+                              src="/images/sol-logo-icon.svg"
+                              alt="Sol MedSpa Logo"
+                              width={16}
+                              height={16}
+                              className="w-4 h-4 brightness-0 invert"
+                            />
                           </div>
                           <span className="text-stone-700">Committed to natural-looking results that enhance your confidence</span>
                         </div>
@@ -563,7 +583,7 @@ export default function SolMedspaLanding() {
             Ready to Transform Your Look?
           </h3>
           <p className="text-xl text-stone-600 mb-10 leading-relaxed">
-            Experience the Sol Medspa difference. Book your session today.
+            Experience the <span className="font-bold italic">Sol</span> Medspa difference. Book your session today.
           </p>
           <Link href="/contact">
             <Button
@@ -580,13 +600,20 @@ export default function SolMedspaLanding() {
       <footer className="py-12 px-4" style={{ backgroundColor: "#F5F1EB" }}>
         <div className="max-w-4xl mx-auto text-center">
           <div
-            className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6"
-            style={{ backgroundColor: "#C4956C20" }}
+            className="inline-flex items-center justify-center mb-6"
           >
-            <Sun className="w-8 h-8" style={{ color: "#C4956C" }} />
+            <Image 
+              src="/images/sol-logo-icon.svg"
+              alt="Sol MedSpa Logo"
+              width={160}
+              height={160}
+              className="w-40 h-40 opacity-100"
+            />
           </div>
 
-          <h4 className="text-2xl font-serif text-stone-800 mb-2">Sol Medspa</h4>
+          <h4 className="text-2xl font-serif text-stone-800 mb-2">
+            <span className="font-bold italic">Sol</span> Medspa
+          </h4>
           <p className="text-stone-600 mb-6">Launching Soon in Your City</p>
 
           <div className="flex justify-center space-x-4 mb-8">
@@ -601,7 +628,7 @@ export default function SolMedspaLanding() {
             </Button>
           </div>
 
-          <p className="text-sm text-stone-500">© 2025 Sol Medspa. All rights reserved.</p>
+          <p className="text-sm text-stone-500">© 2025 <span className="font-bold italic">Sol</span> Medspa. All rights reserved.</p>
         </div>
       </footer>
 
@@ -617,8 +644,14 @@ export default function SolMedspaLanding() {
             </button>
             
             <div className="text-center">
-              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: "#FFF4E6" }}>
-                <Sun className="w-8 h-8" style={{ color: "#C4956C" }} />
+              <div className="flex items-center justify-center mx-auto mb-4">
+                <Image 
+                  src="/images/sol-logo-icon.svg"
+                  alt="Sol MedSpa Logo"
+                  width={120}
+                  height={120}
+                  className="w-30 h-30"
+                />
               </div>
               
               <h3 className="text-2xl font-serif font-bold text-stone-800 mb-3">

@@ -67,7 +67,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-serif text-stone-800 mb-6">Let's Work Together</h1>
+          <h1 className="text-5xl md:text-6xl font-serif text-stone-800 mb-6">Connect with us to book your session</h1>
           <p className="text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto">
             Ready to experience radiant, rejuvenated skin? Get in touch to discuss your aesthetic goals and let's create
             something beautiful together.
