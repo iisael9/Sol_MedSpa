@@ -1,12 +1,13 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
-import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from 'lucide-react'
-import Link from "next/link"
+import { Mail, Phone, MapPin, Instagram, Facebook, Calendar, ExternalLink } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 
 export default function ContactPage() {
@@ -60,18 +61,61 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+  const handleBookOnSquare = () => {
+    // TODO: Add Square booking link when provided
+    alert("Square booking coming soon! Please use the contact form below to schedule your appointment.")
+  }
+
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#F5F1EB" }}>
+    <div className="min-h-screen bg-sol-cream-bg">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 px-4">
+      <section className="relative pt-32 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-serif text-stone-800 mb-6">Connect with us to book your session</h1>
+          <h1 className="text-5xl md:text-6xl font-serif text-stone-800 mb-6">Let's Work Together</h1>
           <p className="text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto">
             Ready to experience radiant, rejuvenated skin? Get in touch to discuss your aesthetic goals and let's create
             something beautiful together.
           </p>
+        </div>
+      </section>
+
+      <section className="pb-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          <Card className="bg-gradient-to-br from-stone-50 to-stone-100 border-stone-200 shadow-xl p-8 md:p-12">
+            <div className="text-center">
+              <div className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center bg-sol-brown-alpha-20">
+                <Calendar className="w-10 h-10 text-sol-brown" />
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-serif text-stone-800 mb-4">Ready to Transform Your Look?</h2>
+
+              <p className="text-stone-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Book your appointment directly through our secure Square booking system. Choose your preferred date,
+                time, and service package in just a few clicks.
+              </p>
+
+              <button
+                onClick={handleBookOnSquare}
+                className="inline-flex flex-col items-center px-8 py-4 bg-sol-brown text-white font-semibold rounded-xl shadow-lg hover:bg-sol-brown-dark hover:shadow-xl transition-all duration-200 transform hover:scale-105 relative"
+              >
+                <div className="flex items-center space-x-2">
+                  <Calendar className="w-5 h-5" />
+                  <span>Book on Square Now</span>
+                  <ExternalLink className="w-4 h-4" />
+                </div>
+                <span className="text-[11px] font-normal opacity-90 mt-1">via Square</span>
+                <span className="absolute -top-2 -right-2 bg-sol-orange text-white text-[10px] font-bold px-2 py-1 rounded-full">
+                  SOON
+                </span>
+              </button>
+
+              <p className="text-sm text-stone-500 mt-6">
+                Instant confirmation • Secure payment • Easy rescheduling • via Square
+              </p>
+            </div>
+          </Card>
         </div>
       </section>
 
@@ -191,8 +235,7 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-12 text-white font-medium shadow-lg hover:opacity-90 transition-opacity disabled:opacity-50"
-                  style={{ backgroundColor: "#C4956C" }}
+                  className="w-full h-12 text-white font-medium shadow-lg hover:opacity-90 transition-opacity disabled:opacity-50 bg-sol-brown hover:bg-sol-brown-dark"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
@@ -218,37 +261,38 @@ export default function ContactPage() {
 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div
-                      className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: "#C4956C20" }}
-                    >
-                      <Mail className="w-6 h-6" style={{ color: "#C4956C" }} />
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 bg-sol-brown-alpha-20">
+                      <Mail className="w-6 h-6 text-sol-brown" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-stone-800 mb-1">Email</h3>
-                      <p className="text-stone-600">admin@sol-medspa.com</p>
+                      <a
+                        href="mailto:contact@sol-medspa.com"
+                        className="text-stone-600 hover:text-sol-brown transition-colors underline"
+                      >
+                        contact@sol-medspa.com
+                      </a>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div
-                      className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: "#C4956C20" }}
-                    >
-                      <Phone className="w-6 h-6" style={{ color: "#C4956C" }} />
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 bg-sol-brown-alpha-20">
+                      <Phone className="w-6 h-6 text-sol-brown" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-stone-800 mb-1">Phone</h3>
-                      <p className="text-stone-600">+1 (909) 246-4442</p>
+                      <a
+                        href="tel:+13108762788"
+                        className="text-stone-600 hover:text-sol-brown transition-colors underline"
+                      >
+                        +1 (310)-876-2788
+                      </a>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div
-                      className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: "#C4956C20" }}
-                    >
-                      <MapPin className="w-6 h-6" style={{ color: "#C4956C" }} />
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 bg-sol-brown-alpha-20">
+                      <MapPin className="w-6 h-6 text-sol-brown" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-stone-800 mb-1">Location</h3>
@@ -262,30 +306,22 @@ export default function ContactPage() {
               <Card className="bg-white border-stone-200 shadow-lg p-8">
                 <h3 className="text-xl font-serif text-stone-800 mb-4">Follow Us</h3>
                 <div className="flex space-x-3">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="rounded-full hover:bg-stone-100"
-                    style={{ color: "#C4956C" }}
+                  <a
+                    href="https://www.instagram.com/sol.medspa/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-stone-100 text-sol-brown hover:text-sol-brown-dark transition-colors"
                   >
                     <Instagram className="w-5 h-5" />
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="rounded-full hover:bg-stone-100"
-                    style={{ color: "#C4956C" }}
+                  </a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61584058650535"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-stone-100 text-sol-brown hover:text-sol-brown-dark transition-colors"
                   >
                     <Facebook className="w-5 h-5" />
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="rounded-full hover:bg-stone-100"
-                    style={{ color: "#C4956C" }}
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </Button>
+                  </a>
                 </div>
               </Card>
 

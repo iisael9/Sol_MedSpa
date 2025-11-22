@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Instagram, Facebook } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 
 // Image Comparison Slider Component
@@ -85,10 +85,7 @@ function ImageComparisonSlider({
       </div>
 
       {/* After Image with clip */}
-      <div
-        className="absolute inset-0 overflow-hidden"
-        style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
-      >
+      <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
         <Image src={afterImage || "/placeholder.svg"} alt={afterLabel} fill className="object-cover" />
         <div className="absolute top-4 right-4 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium">
           {afterLabel}
@@ -100,10 +97,7 @@ function ImageComparisonSlider({
         className="absolute top-0 bottom-0 w-1 bg-white shadow-lg"
         style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
       >
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center cursor-grab active:cursor-grabbing"
-          style={{ backgroundColor: "#C4956C" }}
-        >
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-sol-brown shadow-xl flex items-center justify-center cursor-grab active:cursor-grabbing">
           <ChevronLeft className="w-4 h-4 text-white absolute left-2" />
           <ChevronRight className="w-4 h-4 text-white absolute right-2" />
         </div>
@@ -141,19 +135,17 @@ export default function BeforeAfterPage() {
   ]
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#F5F1EB" }}>
+    <div className="min-h-screen bg-sol-cream-bg">
       <Navigation />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-serif text-stone-800 mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-serif text-foreground mb-6 leading-tight">
             Results
-            <span className="block" style={{ color: "#E55B13" }}>
-              & Radiance
-            </span>
+            <span className="block text-sol-orange">& Radiance</span>
           </h1>
-          <p className="text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             See the transformative results of our treatments. Drag the slider to compare before and after photos.
           </p>
         </div>
@@ -165,8 +157,8 @@ export default function BeforeAfterPage() {
           {beforeAfterData.map((item, index) => (
             <div key={index} className="space-y-6">
               <div className="text-center">
-                <h3 className="text-3xl font-serif text-stone-800 mb-3">{item.title}</h3>
-                <p className="text-lg text-stone-600">{item.description}</p>
+                <h3 className="text-3xl font-serif text-foreground mb-3">{item.title}</h3>
+                <p className="text-lg text-muted-foreground">{item.description}</p>
               </div>
 
               <ImageComparisonSlider beforeImage={item.before} afterImage={item.after} />
@@ -176,17 +168,14 @@ export default function BeforeAfterPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-background">
         <div className="max-w-3xl mx-auto text-center">
-          <h3 className="text-3xl font-serif text-stone-800 mb-6">Ready to Transform Your Look?</h3>
-          <p className="text-lg text-stone-600 mb-8">
+          <h3 className="text-3xl font-serif text-foreground mb-6">Ready to Transform Your Look?</h3>
+          <p className="text-lg text-muted-foreground mb-8">
             Experience the <span className="font-bold italic">Sol</span> Medspa difference. Book your session today.
           </p>
           <Link href="/contact">
-            <Button
-              className="px-8 py-6 text-lg text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-              style={{ backgroundColor: "#C4956C" }}
-            >
+            <Button className="bg-sol-brown hover:bg-sol-orange px-8 py-6 text-lg text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105">
               Book a Session Now
             </Button>
           </Link>
@@ -194,10 +183,10 @@ export default function BeforeAfterPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4" style={{ backgroundColor: "#F5F1EB" }}>
+      <footer className="py-12 px-4 bg-sol-cream-bg">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center justify-center mb-6">
-            <Image 
+            <Image
               src="/images/sol-logo-icon.svg"
               alt="Sol MedSpa Logo"
               width={160}
@@ -205,10 +194,30 @@ export default function BeforeAfterPage() {
               className="w-40 h-40 opacity-100"
             />
           </div>
-          <h4 className="text-2xl font-serif text-stone-800 mb-2">
+          <h4 className="text-2xl font-serif text-foreground mb-2">
             <span className="font-bold italic">Sol</span> Medspa
           </h4>
-          <p className="text-sm text-stone-500 mt-4">© 2025 <span className="font-bold italic">Sol</span> Medspa. All rights reserved.</p>
+          <div className="flex justify-center space-x-4 my-6">
+            <a
+              href="https://www.instagram.com/sol.medspa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/20 text-sol-brown hover:text-sol-brown-dark transition-colors"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61584058650535"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/20 text-sol-brown hover:text-sol-brown-dark transition-colors"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+          </div>
+          <p className="text-sm text-muted-foreground mt-4">
+            © 2025 <span className="font-bold italic">Sol</span> Medspa. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>

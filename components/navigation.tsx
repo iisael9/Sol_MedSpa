@@ -1,15 +1,17 @@
 "use client"
 
+import type React from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, X, Menu, Phone, Mail, MapPin } from 'lucide-react'
+import { X, Menu, Phone, Mail, MapPin, Calendar, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import Image from "next/image"
 
 export function Navigation() {
   const [showComingSoonModal, setShowComingSoonModal] = useState(false)
+  const [showBookNowModal, setShowBookNowModal] = useState(false)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
-  
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -23,13 +25,19 @@ export function Navigation() {
     setShowMobileMenu(false)
   }
 
+  const handleBookNowClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setShowBookNowModal(true)
+    setShowMobileMenu(false)
+  }
+
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-stone-200/50 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-3">
-              <Image 
+              <Image
                 src="/images/sol-logo-icon.svg"
                 alt="Sol MedSpa Logo"
                 width={80}
@@ -99,18 +107,31 @@ export function Navigation() {
               </button>
             </nav>
 
-            {/* CTA Button & Mobile Menu */}
             <div className="flex items-center space-x-3">
               <Link href="/contact">
                 <Button
-                  className="hidden sm:flex items-center px-6 py-2 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-                  style={{ backgroundColor: "#C4956C" }}
+                  variant="outline"
+                  className="hidden sm:flex items-center px-4 py-2 text-stone-700 font-medium rounded-full border-stone-300 hover:bg-stone-100 transition-all duration-200 bg-transparent"
                 >
                   Contact
                 </Button>
               </Link>
 
-              {/* Mobile Menu Button */}
+              <button
+                onClick={handleBookNowClick}
+                className="hidden lg:flex flex-col items-center px-6 py-3 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark relative"
+              >
+                <div className="flex items-center space-x-2">
+                  <Calendar className="w-5 h-5" />
+                  <span>Book on Square Now</span>
+                  <ExternalLink className="w-4 h-4" />
+                </div>
+                <span className="text-[10px] font-normal opacity-80 mt-0.5">via Square</span>
+                <span className="absolute -top-2 -right-2 bg-sol-orange text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
+                  SOON
+                </span>
+              </button>
+
               <Button
                 variant="ghost"
                 className="md:hidden text-stone-600 hover:text-stone-800 hover:bg-stone-100 p-2 rounded-full"
@@ -126,7 +147,6 @@ export function Navigation() {
       {showMobileMenu && (
         <div className="fixed top-[88px] left-0 right-0 z-40 md:hidden bg-white shadow-lg border-t border-stone-200">
           <div className="max-w-7xl mx-auto px-6 py-6">
-            {/* Navigation Links */}
             <div className="space-y-2 mb-6">
               <Link href="/" onClick={() => setShowMobileMenu(false)}>
                 <Button
@@ -180,13 +200,15 @@ export function Navigation() {
               </button>
             </div>
 
-            {/* Contact Information */}
             <div className="border-t border-stone-200 pt-6 space-y-4">
               <h3 className="text-sm font-semibold text-stone-800 mb-3">Contact Information</h3>
-              
-              <a href="mailto:admin@sol-medspa.com" className="flex items-center space-x-3 text-stone-600 hover:text-stone-800 transition-colors">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#F5F1EB" }}>
-                  <Mail className="w-5 h-5" style={{ color: "#C4956C" }} />
+
+              <a
+                href="mailto:admin@sol-medspa.com"
+                className="flex items-center space-x-3 text-stone-600 hover:text-stone-800 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-full flex items-center justify-center bg-sol-cream-bg">
+                  <Mail className="w-5 h-5 text-sol-brown" />
                 </div>
                 <div>
                   <div className="text-xs text-stone-500">Email</div>
@@ -194,9 +216,12 @@ export function Navigation() {
                 </div>
               </a>
 
-              <a href="tel:+15551234567" className="flex items-center space-x-3 text-stone-600 hover:text-stone-800 transition-colors">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#F5F1EB" }}>
-                  <Phone className="w-5 h-5" style={{ color: "#C4956C" }} />
+              <a
+                href="tel:+15551234567"
+                className="flex items-center space-x-3 text-stone-600 hover:text-stone-800 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-full flex items-center justify-center bg-sol-cream-bg">
+                  <Phone className="w-5 h-5 text-sol-brown" />
                 </div>
                 <div>
                   <div className="text-xs text-stone-500">Phone</div>
@@ -205,8 +230,8 @@ export function Navigation() {
               </a>
 
               <div className="flex items-center space-x-3 text-stone-600">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#F5F1EB" }}>
-                  <MapPin className="w-5 h-5" style={{ color: "#C4956C" }} />
+                <div className="w-10 h-10 rounded-full flex items-center justify-center bg-sol-cream-bg">
+                  <MapPin className="w-5 h-5 text-sol-brown" />
                 </div>
                 <div>
                   <div className="text-xs text-stone-500">Location</div>
@@ -215,13 +240,9 @@ export function Navigation() {
               </div>
             </div>
 
-            {/* Contact Button */}
             <div className="mt-6">
               <Link href="/contact" onClick={() => setShowMobileMenu(false)}>
-                <Button
-                  className="w-full text-white font-medium rounded-full py-3 shadow-lg hover:shadow-xl transition-all duration-200"
-                  style={{ backgroundColor: "#C4956C" }}
-                >
+                <Button className="w-full text-white font-medium rounded-full py-3 shadow-lg hover:shadow-xl transition-all duration-200 bg-sol-brown hover:bg-sol-brown-dark">
                   Book a Session
                 </Button>
               </Link>
@@ -239,10 +260,13 @@ export function Navigation() {
             >
               <X className="w-6 h-6" />
             </button>
-            
+
             <div className="text-center">
-              <div className="w-36 h-36 rounded-full mx-auto mb-4 flex items-center justify-center bg-white border-4 shadow-xl" style={{ borderColor: "#C4956C" }}>
-                <Image 
+              <div
+                className="w-36 h-36 rounded-full mx-auto mb-4 flex items-center justify-center bg-white border-4 shadow-xl"
+                style={{ borderColor: "#C4956C" }}
+              >
+                <Image
                   src="/images/sol-logo-icon.svg"
                   alt="Sol MedSpa Logo"
                   width={180}
@@ -250,22 +274,61 @@ export function Navigation() {
                   className="w-44 h-44"
                 />
               </div>
-              
-              <h3 className="text-2xl font-serif font-bold text-stone-800 mb-3">
-                Coming Soon
-              </h3>
-              
+
+              <h3 className="text-2xl font-serif font-bold text-stone-800 mb-3">Coming Soon</h3>
+
               <p className="text-stone-600 mb-6 leading-relaxed">
-                This page is currently being prepared. Check back soon for updates, or contact us directly for more information.
+                This page is currently being prepared. Check back soon for updates, or contact us directly for more
+                information.
               </p>
-              
+
               <Button
                 onClick={() => setShowComingSoonModal(false)}
-                className="w-full text-white font-medium rounded-full py-3 hover:shadow-lg transition-all duration-200"
-                style={{ backgroundColor: "#C4956C" }}
+                className="w-full text-white font-medium rounded-full py-3 hover:shadow-lg transition-all duration-200 bg-sol-brown hover:bg-sol-brown-dark"
               >
                 Got It
               </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showBookNowModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 relative">
+            <button
+              onClick={() => setShowBookNowModal(false)}
+              className="absolute top-4 right-4 text-stone-400 hover:text-stone-600 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <div className="text-center">
+              <div className="w-24 h-24 rounded-full mx-auto mb-6 flex items-center justify-center bg-sol-brown-alpha-20">
+                <Calendar className="w-12 h-12 text-sol-brown" />
+              </div>
+
+              <h3 className="text-2xl font-serif font-bold text-stone-800 mb-3">Square Booking Coming Soon</h3>
+
+              <p className="text-stone-600 mb-6 leading-relaxed">
+                Our online booking system powered by Square will be available soon. In the meantime, please contact us
+                directly to schedule your appointment.
+              </p>
+
+              <div className="space-y-3">
+                <Link href="/contact" onClick={() => setShowBookNowModal(false)}>
+                  <Button className="w-full text-white font-medium rounded-full py-3 hover:shadow-lg transition-all duration-200 bg-sol-brown hover:bg-sol-brown-dark">
+                    Contact Us to Book
+                  </Button>
+                </Link>
+                <Button
+                  onClick={() => setShowBookNowModal(false)}
+                  variant="outline"
+                  className="w-full font-medium rounded-full py-3 border-stone-300 hover:bg-stone-100 transition-all duration-200"
+                >
+                  Close
+                </Button>
+              </div>
             </div>
           </div>
         </div>

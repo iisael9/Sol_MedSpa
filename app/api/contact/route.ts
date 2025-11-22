@@ -10,7 +10,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: "Sol MedSpa <onboarding@resend.dev>",
-      to: "admin@sol-medspa.com", // Updated to admin@sol-medspa.com which is the verified email in testing mode
+      to: "contact@sol-medspa.com", // Updated recipient email to contact@sol-medspa.com for new verified account
       replyTo: email,
       subject: `New Contact Form Submission - ${serviceType || "General Inquiry"}`,
       html: `

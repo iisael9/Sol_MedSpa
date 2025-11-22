@@ -26,7 +26,7 @@ export async function submitEmail(formData: FormData) {
     // Send notification to you
     await resend.emails.send({
       from: "Sol MedSpa <onboarding@resend.dev>",
-      to: ["iisael090@gmail.com"],
+      to: ["contact@sol-medspa.com"],
       subject: "New Sol MedSpa Signup!",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
