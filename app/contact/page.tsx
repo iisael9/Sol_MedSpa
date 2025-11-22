@@ -331,11 +331,11 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <div className="flex justify-between text-stone-700">
                     <span>Monday - Friday</span>
-                    <span className="font-medium">9:00 AM - 6:00 PM</span>
+                    <span className="font-medium">By Appointment</span>
                   </div>
                   <div className="flex justify-between text-stone-700">
                     <span>Saturday</span>
-                    <span className="font-medium">10:00 AM - 4:00 PM</span>
+                    <span className="font-medium">By Appointment</span>
                   </div>
                   <div className="flex justify-between text-stone-700">
                     <span>Sunday</span>
