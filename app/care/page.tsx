@@ -1,50 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Sparkles } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { CheckCircle2, AlertCircle, Info, Clock, ShieldAlert } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 
 export default function CarePage() {
-  const careInstructions = [
-    {
-      title: "Dysport",
-      description:
-        "Essential guidelines for before and after your Dysport injection treatment to ensure optimal results and minimize side effects.",
-      icon: "💉",
-    },
-    {
-      title: "Botox",
-      description:
-        "Comprehensive care instructions for Botox treatments including pre-treatment preparation and post-care protocols for best outcomes.",
-      icon: "✨",
-    },
-    {
-      title: "GLP-1 Inhibitors",
-      description:
-        "Important information about preparation, administration, and aftercare for GLP-1 inhibitor treatments to maximize effectiveness.",
-      icon: "💊",
-    },
-    {
-      title: "Lip Fillers",
-      description:
-        "Pre- and post-care details for dermal filler treatments to reduce bruising, swelling, and ensure beautiful, long-lasting results.",
-      icon: "💋",
-    },
-    {
-      title: "Laser Therapy",
-      description:
-        "Detailed instructions for skin preparation and recovery from laser treatments for optimal healing and skin rejuvenation.",
-      icon: "⚡",
-    },
-    {
-      title: "General Skincare",
-      description:
-        "Daily skincare routines and maintenance tips to complement your aesthetic treatments and maintain radiant, healthy skin.",
-      icon: "🌟",
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-sol-cream-bg">
       <Navigation />
@@ -78,65 +39,177 @@ export default function CarePage() {
         </div>
       </section>
 
-      {/* Care Instructions Section */}
+      {/* Main Content */}
       <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">Care Instructions</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Access detailed pre-care and aftercare guidelines for each treatment offered at{" "}
-              <span className="font-bold italic">Sol</span> MedSpa.
-              <br />
-              Click a treatment below to learn how to prepare and care for your skin for optimal results.
+        <div className="max-w-4xl mx-auto space-y-16">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">Patient Care Guide</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              We hope you enjoy our innovative approach to self-care as we bring our spa to the comfort of your home.
+              Please review the guidelines below to ensure the best possible experience and results.
             </p>
           </div>
 
-          {/* Care Cards Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {careInstructions.map((item, index) => (
-              <Card
-                key={index}
-                className="border-border bg-card hover:shadow-lg transition-all duration-300 cursor-pointer group"
-              >
+          {/* Preparation Section */}
+          <div className="space-y-8">
+            <div className="flex items-center gap-4 border-b border-sol-brown/20 pb-4">
+              <div className="h-12 w-12 rounded-full bg-sol-brown/10 flex items-center justify-center text-sol-brown">
+                <Clock className="h-6 w-6" />
+              </div>
+              <h3 className="text-3xl font-serif text-sol-brown">Preparing for Your Appointment</h3>
+            </div>
+
+            <div className="grid gap-6">
+              <Card className="border-border bg-card">
                 <CardHeader>
-                  <div className="flex items-start gap-4">
-                    <div className="text-4xl">{item.icon}</div>
-                    <div className="flex-1">
-                      <CardTitle className="text-2xl font-serif mb-2 group-hover:text-sol-brown transition-colors">
-                        {item.title}
-                      </CardTitle>
-                      <CardDescription className="text-muted-foreground leading-relaxed text-base">
-                        {item.description}
-                      </CardDescription>
-                    </div>
-                  </div>
+                  <CardTitle className="text-xl font-serif flex items-center gap-2">
+                    <Info className="h-5 w-5 text-sol-orange" />
+                    Setting the Stage
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <Button
-                    variant="ghost"
-                    className="text-sol-brown hover:text-sol-orange hover:bg-muted w-full justify-start"
-                  >
-                    View Care Instructions
-                    <Sparkles className="ml-2 h-4 w-4" />
-                  </Button>
+                <CardContent className="space-y-4 text-muted-foreground">
+                  <p>
+                    Cosmetic injections are best done in open spaces, like a living room, with the client sitting on a
+                    couch or recliner. Our professionals will help you find the best areas and can bring a medical chair
+                    upon request at no extra charge to you.
+                  </p>
+                  <p>
+                    For an optimal experience, please ensure that pets that may be unsettled by our visiting health care
+                    professional are removed from the area where the care will be delivered.
+                  </p>
+                  <p>
+                    Please let us know of any special parking needs - gate codes, building entry instructions, or
+                    elevator access.
+                  </p>
                 </CardContent>
               </Card>
-            ))}
+
+              <Card className="border-border bg-card">
+                <CardHeader>
+                  <CardTitle className="text-xl font-serif flex items-center gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-sol-orange" />
+                    Medical & Personal Prep
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground">
+                  <ul className="space-y-3">
+                    <li className="flex gap-3">
+                      <span className="h-1.5 w-1.5 rounded-full bg-sol-brown mt-2 shrink-0" />
+                      <span>
+                        For facial injections, please remove any make-up, toner, or face creams prior to our visit.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="h-1.5 w-1.5 rounded-full bg-sol-brown mt-2 shrink-0" />
+                      <span>
+                        Some clients may be apprehensive about injections; taking Acetaminophen 500mg prior to the
+                        appointment (provided you do not have liver disease) can help ease discomfort.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="h-1.5 w-1.5 rounded-full bg-sol-brown mt-2 shrink-0" />
+                      <span>
+                        Please inform our medical professionals if you are taking any medication classified as a blood
+                        thinning drug.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="h-1.5 w-1.5 rounded-full bg-sol-brown mt-2 shrink-0" />
+                      <span>
+                        Please inform our medical professionals if you have any known allergic reactions to medications
+                        or injectables.
+                      </span>
+                    </li>
+                  </ul>
+                  <div className="mt-4 p-4 bg-sol-brown/5 rounded-lg text-sm">
+                    <p>
+                      <strong>Note on Services:</strong> Our services for now are limited to cosmetic injections, but we
+                      can also provide IV infusions, vitamins, supplements, lip fillers, and GLP-1 inhibitors upon
+                      request and after a free consultation with our medical professionals.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
-          {/* Additional Information */}
-          <div className="mt-16 text-center">
-            <Card className="border-sol-brown bg-card/80 backdrop-blur-sm">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-serif text-foreground mb-4">Have Questions About Your Treatment?</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Our team is here to guide you through every step of your aesthetic journey.
-                  <br />
-                  Contact us for personalized care instructions or to schedule a consultation.
-                </p>
-                <Button className="bg-sol-brown hover:bg-sol-orange text-white px-8 py-6 text-lg">Contact Us</Button>
+          {/* Aftercare Section */}
+          <div className="space-y-8 pt-8">
+            <div className="flex items-center gap-4 border-b border-sol-brown/20 pb-4">
+              <div className="h-12 w-12 rounded-full bg-sol-brown/10 flex items-center justify-center text-sol-brown">
+                <ShieldAlert className="h-6 w-6" />
+              </div>
+              <h3 className="text-3xl font-serif text-sol-brown">Aftercare Instructions</h3>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="border-border bg-card">
+                <CardHeader>
+                  <CardTitle className="text-xl font-serif">Immediate Care</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-muted-foreground">
+                  <p>Keep the treated area clean and avoid touching it unnecessarily.</p>
+                  <p>
+                    Avoid lying down, excessively leaning forward, or applying pressure to treated areas. Doing so can
+                    result in undesirable outcomes.
+                  </p>
+                  <p>Avoid strenuous exercise, sweating, and saunas for 24 hours after injectables.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-border bg-card">
+                <CardHeader>
+                  <CardTitle className="text-xl font-serif">What to Expect</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-muted-foreground">
+                  <p>
+                    Mild redness, pain, and swelling at injection sites is common and expected. It will resolve 4 - 6
+                    hours after the injection.
+                  </p>
+                  <p>If you do not have liver disease, you can take Tylenol for comfort.</p>
+                  <p>
+                    While rare, bruising at injection sites can occur. This is due to inadvertent puncture of small
+                    blood vessels and is self-limited.
+                  </p>
+                  <p className="font-medium text-sol-brown">
+                    Full results following injectables will be evident 1 week from the original injection.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="border-red-100 bg-red-50/50">
+              <CardContent className="p-6">
+                <h4 className="flex items-center gap-2 text-lg font-bold text-red-700 mb-4">
+                  <AlertCircle className="h-5 w-5" />
+                  When to Seek Help
+                </h4>
+                <div className="grid md:grid-cols-2 gap-6 text-sm text-red-900/80">
+                  <div>
+                    <strong className="block text-red-800 mb-1">Contact Us Immediately If:</strong>
+                    <p>
+                      You experience redness and purulent discharge from injection sites one day after the injection.
+                      This is not an expected outcome. You will receive a medical consultation at no additional charge.
+                    </p>
+                  </div>
+                  <div>
+                    <strong className="block text-red-800 mb-1">Go to Emergency Room If:</strong>
+                    <p>
+                      You experience eruption of hives, swelling of the throat, and wheezing or difficulty breathing.
+                      These are not expected outcomes and could represent a serious life-threatening allergic reaction.
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center pt-8">
+            <h3 className="text-2xl font-serif text-foreground mb-4">Have More Questions?</h3>
+            <Link href="/contact">
+              <Button className="bg-sol-brown hover:bg-sol-orange text-white px-8 py-6 text-lg">Contact Us</Button>
+            </Link>
           </div>
         </div>
       </section>

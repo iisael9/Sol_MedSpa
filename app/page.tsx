@@ -249,7 +249,7 @@ export default function LandingPage() {
                 home. No travel, no waiting rooms—just pure relaxation and results.
               </p>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4 mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 bg-sol-brown">
                     <Sparkles className="w-4 h-4 text-white" />
@@ -369,7 +369,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="mt-16">
+          <div className="mt-16" id="about">
             <h4 className="text-2xl font-serif text-stone-800 text-center mb-8">Why Choose Us</h4>
 
             <div className="max-w-4xl mx-auto">
@@ -379,8 +379,8 @@ export default function LandingPage() {
                     {/* Doctor Image */}
                     <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-stone-100">
                       <Image
-                        src="/professional-male-doctor-in-white-coat-medical-set.jpg"
-                        alt="Dr. Juan Vasquez"
+                        src="/images/dr-vasquez-portrait.png"
+                        alt="Dr. Juan Vasquez Vasquez"
                         fill
                         className="object-cover"
                       />
@@ -388,53 +388,35 @@ export default function LandingPage() {
 
                     {/* Doctor Info */}
                     <div>
-                      <h5 className="text-2xl font-serif text-stone-800 mb-2">
-                        <span className="font-bold italic">Sol</span> Medspa
-                      </h5>
-                      <p className="text-lg mb-6 text-sol-brown">Board-Certified Aesthetic Physician</p>
+                      <h5 className="text-2xl font-serif text-stone-800 mb-1">Juan Vasquez Vasquez, MD</h5>
+                      <p className="text-lg mb-4 text-sol-brown">Board-Certified Aesthetic Physician</p>
 
-                      <p className="text-stone-700 mb-4 leading-relaxed">
-                        With over 10 years of experience in aesthetic medicine, Dr. Vasquez brings expertise, precision,
-                        and artistry to every treatment.
+                      <p className="text-stone-700 mb-6 leading-relaxed">
+                        A California Medical Board certified provider with over half a decade of experience in aesthetic
+                        procedures, Dr. Vasquez Vasquez brings expertise, precision, and artistry to every treatment. He
+                        provides high quality, affordable, and personalized treatment plans tailored to your unique
+                        beauty goals.
                       </p>
 
-                      <div className="space-y-3 mb-6">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-sol-brown">
-                            <Sparkles className="w-4 h-4 text-white" />
-                          </div>
-                          <span className="text-stone-700">
-                            Board-certified with extensive training in injectables and aesthetic procedures
-                          </span>
+                      <div className="space-y-4 mb-6">
+                        <div>
+                          <p className="font-semibold text-stone-800">University of California, Berkeley</p>
+                          <p className="text-sm text-stone-600">Bachelor of Arts - BA, Integrative Biology</p>
+                          <p className="text-xs text-stone-500">Jan 2011 - Jun 2015</p>
                         </div>
-                        <div className="flex items-start space-x-3">
-                          <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-sol-brown">
-                            <Heart className="w-4 h-4 text-white" />
-                          </div>
-                          <span className="text-stone-700">
-                            Personalized treatment plans tailored to your unique beauty goals
-                          </span>
+                        <div>
+                          <p className="font-semibold text-stone-800">
+                            University of California San Francisco School of Medicine
+                          </p>
+                          <p className="text-sm text-stone-600">Doctor of Medicine</p>
+                          <p className="text-xs text-stone-500">Jul 2017 - Jun 2021</p>
                         </div>
-                        <div className="flex items-start space-x-3">
-                          <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-sol-brown">
-                            <Image
-                              src="/images/sol-logo-icon.svg"
-                              alt="Sol MedSpa Logo"
-                              width={16}
-                              height={16}
-                              className="w-4 h-4 brightness-0 invert"
-                            />
-                          </div>
-                          <span className="text-stone-700">
-                            Committed to natural-looking results that enhance your confidence
-                          </span>
+                        <div>
+                          <p className="font-semibold text-stone-800">New York University School of Medicine</p>
+                          <p className="text-sm text-stone-600">Emergency Medicine Residency Program</p>
+                          <p className="text-xs text-stone-500">Jul 2021 - Jun 2025</p>
                         </div>
                       </div>
-
-                      <p className="text-stone-600 italic">
-                        "My mission is to help you look and feel your absolute best, with treatments that bring out your
-                        natural radiance."
-                      </p>
                     </div>
                   </div>
                 </CardContent>

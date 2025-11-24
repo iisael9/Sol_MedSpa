@@ -1,6 +1,4 @@
 "use client"
-
-import type React from "react"
 import { Button } from "@/components/ui/button"
 import { X, Menu, Phone, Mail, MapPin, Calendar, ExternalLink } from "lucide-react"
 import Link from "next/link"
@@ -9,7 +7,6 @@ import Image from "next/image"
 
 export function Navigation() {
   const [showComingSoonModal, setShowComingSoonModal] = useState(false)
-  const [showBookNowModal, setShowBookNowModal] = useState(false)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
@@ -17,17 +14,6 @@ export function Navigation() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
-  }
-
-  const handleComingSoonClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    setShowComingSoonModal(true)
-    setShowMobileMenu(false)
-  }
-
-  const handleBookNowClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    setShowBookNowModal(true)
     setShowMobileMenu(false)
   }
 
@@ -79,6 +65,14 @@ export function Navigation() {
                   Concierge Experience
                 </Button>
               </Link>
+              <Link href="/#about">
+                <Button
+                  variant="ghost"
+                  className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
+                >
+                  About
+                </Button>
+              </Link>
               <Link href="/before-after">
                 <Button
                   variant="ghost"
@@ -87,17 +81,16 @@ export function Navigation() {
                   Before/After
                 </Button>
               </Link>
+              <Link href="/care">
+                <Button
+                  variant="ghost"
+                  className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
+                >
+                  Care
+                </Button>
+              </Link>
               <button
-                onClick={handleComingSoonClick}
-                className="relative text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
-              >
-                Care
-                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
-                  SOON
-                </span>
-              </button>
-              <button
-                onClick={handleComingSoonClick}
+                onClick={() => setShowComingSoonModal(true)}
                 className="relative text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
               >
                 Pricing
@@ -117,20 +110,20 @@ export function Navigation() {
                 </Button>
               </Link>
 
-              <button
-                onClick={handleBookNowClick}
-                className="hidden lg:flex flex-col items-center px-6 py-3 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark relative"
+              {/* Simplified and compacted the Book button design */}
+              <a
+                href="https://app.squareup.com/appointments/book/9cjimearmu7iz4/LM76T0GTP6A6G/start"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden lg:flex items-center space-x-3 px-4 py-1.5 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark"
               >
-                <div className="flex items-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>Book on Square Now</span>
-                  <ExternalLink className="w-4 h-4" />
+                <Calendar className="w-4 h-4" />
+                <div className="flex flex-col items-center leading-none">
+                  <span className="text-sm">Book on Square Now</span>
+                  <span className="text-[10px] font-light opacity-90 mt-0.5">via Square</span>
                 </div>
-                <span className="text-[10px] font-normal opacity-80 mt-0.5">via Square</span>
-                <span className="absolute -top-2 -right-2 bg-sol-orange text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
-                  SOON
-                </span>
-              </button>
+                <ExternalLink className="w-3 h-3 opacity-80" />
+              </a>
 
               <Button
                 variant="ghost"
@@ -172,6 +165,14 @@ export function Navigation() {
                   Concierge Experience
                 </Button>
               </Link>
+              <Link href="/#about" onClick={() => setShowMobileMenu(false)}>
+                <Button
+                  variant="ghost"
+                  className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 justify-start"
+                >
+                  About
+                </Button>
+              </Link>
               <Link href="/before-after" onClick={() => setShowMobileMenu(false)}>
                 <Button
                   variant="ghost"
@@ -180,17 +181,16 @@ export function Navigation() {
                   Before/After
                 </Button>
               </Link>
+              <Link href="/care" onClick={() => setShowMobileMenu(false)}>
+                <Button
+                  variant="ghost"
+                  className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 justify-start"
+                >
+                  Care
+                </Button>
+              </Link>
               <button
-                onClick={handleComingSoonClick}
-                className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 relative"
-              >
-                Care
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
-                  SOON
-                </span>
-              </button>
-              <button
-                onClick={handleComingSoonClick}
+                onClick={() => setShowComingSoonModal(true)}
                 className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 relative"
               >
                 Pricing
@@ -198,6 +198,14 @@ export function Navigation() {
                   SOON
                 </span>
               </button>
+              <Link href="/contact" onClick={() => setShowMobileMenu(false)}>
+                <Button
+                  variant="ghost"
+                  className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 justify-start"
+                >
+                  Contact
+                </Button>
+              </Link>
             </div>
 
             <div className="border-t border-stone-200 pt-6 space-y-4">
@@ -288,47 +296,6 @@ export function Navigation() {
               >
                 Got It
               </Button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {showBookNowModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 relative">
-            <button
-              onClick={() => setShowBookNowModal(false)}
-              className="absolute top-4 right-4 text-stone-400 hover:text-stone-600 transition-colors"
-            >
-              <X className="w-6 h-6" />
-            </button>
-
-            <div className="text-center">
-              <div className="w-24 h-24 rounded-full mx-auto mb-6 flex items-center justify-center bg-sol-brown-alpha-20">
-                <Calendar className="w-12 h-12 text-sol-brown" />
-              </div>
-
-              <h3 className="text-2xl font-serif font-bold text-stone-800 mb-3">Square Booking Coming Soon</h3>
-
-              <p className="text-stone-600 mb-6 leading-relaxed">
-                Our online booking system powered by Square will be available soon. In the meantime, please contact us
-                directly to schedule your appointment.
-              </p>
-
-              <div className="space-y-3">
-                <Link href="/contact" onClick={() => setShowBookNowModal(false)}>
-                  <Button className="w-full text-white font-medium rounded-full py-3 hover:shadow-lg transition-all duration-200 bg-sol-brown hover:bg-sol-brown-dark">
-                    Contact Us to Book
-                  </Button>
-                </Link>
-                <Button
-                  onClick={() => setShowBookNowModal(false)}
-                  variant="outline"
-                  className="w-full font-medium rounded-full py-3 border-stone-300 hover:bg-stone-100 transition-all duration-200"
-                >
-                  Close
-                </Button>
-              </div>
             </div>
           </div>
         </div>

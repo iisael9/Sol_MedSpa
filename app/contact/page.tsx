@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -11,6 +10,10 @@ import { Mail, Phone, MapPin, Instagram, Facebook, Calendar, ExternalLink } from
 import { Navigation } from "@/components/navigation"
 
 export default function ContactPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -61,11 +64,6 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleBookOnSquare = () => {
-    // TODO: Add Square booking link when provided
-    alert("Square booking coming soon! Please use the contact form below to schedule your appointment.")
-  }
-
   return (
     <div className="min-h-screen bg-sol-cream-bg">
       <Navigation />
@@ -96,8 +94,10 @@ export default function ContactPage() {
                 time, and service package in just a few clicks.
               </p>
 
-              <button
-                onClick={handleBookOnSquare}
+              <a
+                href="https://app.squareup.com/appointments/book/9cjimearmu7iz4/LM76T0GTP6A6G/start"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex flex-col items-center px-8 py-4 bg-sol-brown text-white font-semibold rounded-xl shadow-lg hover:bg-sol-brown-dark hover:shadow-xl transition-all duration-200 transform hover:scale-105 relative"
               >
                 <div className="flex items-center space-x-2">
@@ -106,10 +106,7 @@ export default function ContactPage() {
                   <ExternalLink className="w-4 h-4" />
                 </div>
                 <span className="text-[11px] font-normal opacity-90 mt-1">via Square</span>
-                <span className="absolute -top-2 -right-2 bg-sol-orange text-white text-[10px] font-bold px-2 py-1 rounded-full">
-                  SOON
-                </span>
-              </button>
+              </a>
 
               <p className="text-sm text-stone-500 mt-6">
                 Instant confirmation • Secure payment • Easy rescheduling • via Square
