@@ -235,8 +235,8 @@ export default function LandingPage() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/image.png"
-                  alt="Group spa party experience"
+                  src="/images/pexels-prolificpeople-34220326.jpg"
+                  alt="Professional medical aesthetic treatments"
                   width={600}
                   height={400}
                   className="w-full h-full object-cover"
