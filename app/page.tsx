@@ -98,9 +98,8 @@ export default function LandingPage() {
               Radiant Skin.
               <span className="block text-sol-orange mt-2">Reimagined.</span>
             </h1>
-            <p className="text-3xl md:text-4xl font-serif text-white mb-6">Host the glow</p>
             <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
-              Host a botox party with sol med spa
+              Host A Botox Party With Sol Medspa
             </p>
 
             <a
