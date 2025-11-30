@@ -98,19 +98,14 @@ export default function ContactPage() {
                 href="https://app.squareup.com/appointments/book/9cjimearmu7iz4/LM76T0GTP6A6G/start"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-col items-center px-8 py-4 bg-sol-brown text-white font-semibold rounded-xl shadow-lg hover:bg-sol-brown-dark hover:shadow-xl transition-all duration-200 transform hover:scale-105 relative"
+                className="inline-flex items-center space-x-2 px-8 py-4 bg-sol-brown text-white font-semibold rounded-xl shadow-lg hover:bg-sol-brown-dark hover:shadow-xl transition-all duration-200 transform hover:scale-105"
               >
-                <div className="flex items-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>Book on Square Now</span>
-                  <ExternalLink className="w-4 h-4" />
-                </div>
-                <span className="text-[11px] font-normal opacity-90 mt-1">via Square</span>
+                <Calendar className="w-5 h-5" />
+                <span>Book A Session</span>
+                <ExternalLink className="w-4 h-4" />
               </a>
 
-              <p className="text-sm text-stone-500 mt-6">
-                Instant confirmation • Secure payment • Easy rescheduling • via Square
-              </p>
+              <p className="text-sm text-stone-500 mt-6">Instant confirmation • Secure payment • Easy rescheduling</p>
             </div>
           </Card>
         </div>

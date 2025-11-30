@@ -73,14 +73,6 @@ export function Navigation() {
                   About
                 </Button>
               </Link>
-              <Link href="/before-after">
-                <Button
-                  variant="ghost"
-                  className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
-                >
-                  Before/After
-                </Button>
-              </Link>
               <Link href="/care">
                 <Button
                   variant="ghost"
@@ -110,18 +102,14 @@ export function Navigation() {
                 </Button>
               </Link>
 
-              {/* Simplified and compacted the Book button design */}
               <a
                 href="https://app.squareup.com/appointments/book/9cjimearmu7iz4/LM76T0GTP6A6G/start"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden lg:flex items-center space-x-3 px-4 py-1.5 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark"
+                className="hidden lg:flex items-center space-x-2 px-5 py-2.5 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark"
               >
                 <Calendar className="w-4 h-4" />
-                <div className="flex flex-col items-center leading-none">
-                  <span className="text-sm">Book on Square Now</span>
-                  <span className="text-[10px] font-light opacity-90 mt-0.5">via Square</span>
-                </div>
+                <span className="text-sm">Book A Session</span>
                 <ExternalLink className="w-3 h-3 opacity-80" />
               </a>
 
@@ -171,14 +159,6 @@ export function Navigation() {
                   className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 justify-start"
                 >
                   About
-                </Button>
-              </Link>
-              <Link href="/before-after" onClick={() => setShowMobileMenu(false)}>
-                <Button
-                  variant="ghost"
-                  className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 justify-start"
-                >
-                  Before/After
                 </Button>
               </Link>
               <Link href="/care" onClick={() => setShowMobileMenu(false)}>
