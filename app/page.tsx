@@ -98,9 +98,9 @@ export default function LandingPage() {
               Radiant Skin.
               <span className="block text-sol-orange mt-2">Reimagined.</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
               Host A Botox Party With Sol Medspa
-            </p>
+            </h2>
 
             <a
               href="https://app.squareup.com/appointments/book/9cjimearmu7iz4/LM76T0GTP6A6G/start"
