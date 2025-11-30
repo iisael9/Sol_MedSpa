@@ -117,130 +117,106 @@ export default function LandingPage() {
       {/* Services Section */}
       <section id="services" className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-serif text-stone-800 mb-12 text-center">Our Services</h3>
+          <h3 className="text-4xl font-serif text-stone-800 mb-4 text-center">Our Services</h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <p className="text-center text-stone-600 text-lg mb-12 max-w-3xl mx-auto">
+            <span className="font-bold italic">Sol</span> Medspa offers premium aesthetic treatments designed to enhance
+            your natural beauty with the highest standards of care and expertise.
+          </p>
+
+          <h4 className="text-2xl font-serif text-stone-800 mb-8 text-center">Core Services</h4>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
             {/* Botox Party Experience */}
-            <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300">
-              <Image
-                src="/luxurious-home-botox-party-friends-enjoying-treatm.jpg"
-                alt="Botox Party Experience"
-                width={450}
-                height={600}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-              {/* Default State - Title Only */}
-              <div className="absolute inset-0 flex items-end justify-center p-6 group-hover:opacity-0 transition-opacity duration-300">
-                <h4 className="text-2xl font-serif text-white text-center">Botox Party Experience</h4>
+            <Card className="p-8 hover:shadow-lg transition-shadow text-center relative">
+              <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold text-white bg-sol-orange">
+                Group Discounts
               </div>
-
-              {/* Hover State - Details */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/60">
-                <h4 className="text-2xl font-serif text-white mb-4 text-center">Botox Party Experience</h4>
-                <ul className="text-white text-sm space-y-2 text-center">
-                  <li>Host a private party at home</li>
-                  <li>Bring friends & family</li>
-                  <li>Special group pricing (3+ guests)</li>
-                  <li>Professional, comfortable setting</li>
-                </ul>
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-sol-cream-bg flex items-center justify-center">
+                  <Heart className="w-8 h-8 text-sol-brown" />
+                </div>
               </div>
-            </div>
+              <h5 className="text-xl font-serif text-stone-800 mb-3">Botox Party Experience</h5>
+              <p className="text-stone-600 text-sm leading-relaxed mb-2">
+                Host a private Botox party at home with friends
+              </p>
+              <p className="text-sol-orange text-sm font-medium">Special pricing for groups of 3+</p>
+            </Card>
 
             {/* Botox & Dysport */}
-            <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300">
-              <Image
-                src="/professional-botox-injection-treatment-medical-aes.jpg"
-                alt="Botox & Dysport"
-                width={450}
-                height={600}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-              {/* Default State - Title Only */}
-              <div className="absolute inset-0 flex items-end justify-center p-6 group-hover:opacity-0 transition-opacity duration-300">
-                <h4 className="text-2xl font-serif text-white text-center">Injectables</h4>
+            <Card className="p-8 hover:shadow-lg transition-shadow text-center">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-sol-cream-bg flex items-center justify-center">
+                  <Sparkles className="w-8 h-8 text-sol-brown" />
+                </div>
               </div>
-
-              {/* Hover State - Details */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/60">
-                <h4 className="text-2xl font-serif text-white mb-4 text-center">Injectables</h4>
-                <ul className="text-white text-sm space-y-2 text-center">
-                  <li>Botox & Dysport</li>
-                  <li>Smooth wrinkles & fine lines</li>
-                  <li>Natural, refreshed appearance</li>
-                  <li>Quick, comfortable treatment</li>
-                </ul>
-              </div>
-            </div>
+              <h5 className="text-xl font-serif text-stone-800 mb-3">Botox & Dysport</h5>
+              <p className="text-stone-600 text-sm leading-relaxed">
+                Smooth wrinkles and fine lines for a refreshed, youthful appearance
+              </p>
+            </Card>
 
             {/* GLP-1 Inhibitors */}
-            <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300">
-              <Image
-                src="/elegant-woman-receiving-wellness-consultation-with.jpg"
-                alt="GLP-1 Inhibitors"
-                width={450}
-                height={600}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-              {/* Default State - Title Only */}
-              <div className="absolute inset-0 flex items-end justify-center p-6 group-hover:opacity-0 transition-opacity duration-300">
-                <h4 className="text-2xl font-serif text-white text-center">Weight Management</h4>
+            <Card className="p-8 hover:shadow-lg transition-shadow text-center">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-sol-cream-bg flex items-center justify-center">
+                  <Sparkles className="w-8 h-8 text-sol-brown" />
+                </div>
               </div>
+              <h5 className="text-xl font-serif text-stone-800 mb-3">GLP-1 Inhibitors</h5>
+              <p className="text-stone-600 text-sm leading-relaxed">Available upon request</p>
+            </Card>
+          </div>
 
-              {/* Hover State - Details */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/60">
-                <h4 className="text-2xl font-serif text-white mb-4 text-center">Weight Management</h4>
-                <ul className="text-white text-sm space-y-2 text-center">
-                  <li>GLP-1 Inhibitors</li>
-                  <li>Medically supervised program</li>
-                  <li>Available upon request</li>
-                  <li>Personalized treatment plans</li>
-                </ul>
+          <h4 className="text-2xl font-serif text-stone-800 mb-8 text-center">Coming Soon</h4>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Lip Fillers */}
+            <Card className="p-8 hover:shadow-lg transition-shadow text-center opacity-75">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center">
+                  <Sparkles className="w-8 h-8 text-stone-400" />
+                </div>
               </div>
-            </div>
+              <h5 className="text-xl font-serif text-stone-800 mb-3">Lip Fillers</h5>
+              <p className="text-stone-600 text-sm leading-relaxed">Enhanced lip treatments</p>
+            </Card>
 
-            {/* Coming Soon - Skin Care */}
-            <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300">
-              <Image
-                src="/luxurious-facial-skin-care-treatment-spa.jpg"
-                alt="Skin Care"
-                width={450}
-                height={600}
-                className="w-full h-full object-cover opacity-60"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-              {/* Coming Soon Badge */}
-              <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold text-white bg-sol-orange shadow-lg">
-                Coming Soon
+            {/* Laser Therapy */}
+            <Card className="p-8 hover:shadow-lg transition-shadow text-center opacity-75">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center">
+                  <Sparkles className="w-8 h-8 text-stone-400" />
+                </div>
               </div>
+              <h5 className="text-xl font-serif text-stone-800 mb-3">Laser Therapy</h5>
+              <p className="text-stone-600 text-sm leading-relaxed">Advanced skin rejuvenation</p>
+            </Card>
 
-              {/* Default State - Title Only */}
-              <div className="absolute inset-0 flex items-end justify-center p-6 group-hover:opacity-0 transition-opacity duration-300">
-                <h4 className="text-2xl font-serif text-white text-center">Skin Care</h4>
+            {/* In-Home Treatments */}
+            <Card className="p-8 hover:shadow-lg transition-shadow text-center opacity-75">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                    />
+                  </svg>
+                </div>
               </div>
-
-              {/* Hover State - Details */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/60">
-                <h4 className="text-2xl font-serif text-white mb-4 text-center">Skin Care</h4>
-                <ul className="text-white text-sm space-y-2 text-center">
-                  <li>Advanced facial treatments</li>
-                  <li>Medical-grade products</li>
-                  <li>Customized skincare plans</li>
-                  <li>Launching soon</li>
-                </ul>
-              </div>
-            </div>
+              <h5 className="text-xl font-serif text-stone-800 mb-3">In-Home Treatments</h5>
+              <p className="text-stone-600 text-sm leading-relaxed">We bring the med spa to you</p>
+            </Card>
           </div>
           {/* </CHANGE> */}
         </div>
       </section>
 
+      {/* Concierge Experience Section */}
       <section id="concierge-experience" className="py-16 px-4 bg-sol-cream-bg">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -336,8 +312,6 @@ export default function LandingPage() {
                     {/* Doctor Info */}
                     <div>
                       <h5 className="text-2xl font-serif text-stone-800 mb-1">Juan Vasquez Vasquez, MD</h5>
-                      <p className="text-lg mb-4 text-sol-brown">Board-Certified Aesthetic Physician</p>
-
                       <p className="text-stone-700 mb-6 leading-relaxed">
                         A California Medical Board certified provider with over half a decade of experience in aesthetic
                         procedures, Dr. Vasquez Vasquez brings expertise, precision, and artistry to every treatment. He
