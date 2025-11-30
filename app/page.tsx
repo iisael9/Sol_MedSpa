@@ -5,10 +5,9 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Sparkles, Heart, Instagram, Facebook, Twitter, X } from "lucide-react"
+import { Sparkles, Heart, Instagram, Facebook, X } from "lucide-react"
 import Image from "next/image"
 import { submitEmail } from "./actions/email"
-import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 
 export default function LandingPage() {
@@ -101,15 +100,18 @@ export default function LandingPage() {
             </h1>
             <p className="text-3xl md:text-4xl font-serif text-white mb-6">Host the glow</p>
             <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
-              <span className="font-bold italic">Sol</span> Medspa - elevate your glow, in the comfort of your home.
-              Host your own botox party.
+              Host a botox party with sol med spa
             </p>
 
-            <Link href="/contact">
+            <a
+              href="https://app.squareup.com/appointments/book/9cjimearmu7iz4/LM76T0GTP6A6G/start"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="h-14 px-10 text-lg text-white font-medium shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark">
                 Book a Session
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -212,7 +214,6 @@ export default function LandingPage() {
               <p className="text-stone-600 text-sm leading-relaxed">We bring the med spa to you</p>
             </Card>
           </div>
-          {/* </CHANGE> */}
         </div>
       </section>
 
@@ -355,14 +356,18 @@ export default function LandingPage() {
             Experience the <span className="font-bold italic">Sol</span> Medspa difference. Book your consultation
             today.
           </p>
-          <Link href="/contact">
+          <a
+            href="https://app.squareup.com/appointments/book/9cjimearmu7iz4/LM76T0GTP6A6G/start"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               size="lg"
               className="h-14 px-10 text-lg text-white font-medium shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark"
             >
               Book a Session Now
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -401,9 +406,6 @@ export default function LandingPage() {
             >
               <Facebook className="w-5 h-5" />
             </a>
-            <Button variant="ghost" size="icon" className="hover:bg-white/20 text-sol-brown hover:text-sol-brown-dark">
-              <Twitter className="w-5 h-5" />
-            </Button>
           </div>
 
           <p className="text-sm text-stone-500">

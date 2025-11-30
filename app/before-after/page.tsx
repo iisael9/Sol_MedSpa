@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Instagram, Facebook } from "lucide-react"
 import { Navigation } from "@/components/navigation"
@@ -174,11 +173,15 @@ export default function BeforeAfterPage() {
           <p className="text-lg text-muted-foreground mb-8">
             Experience the <span className="font-bold italic">Sol</span> Medspa difference. Book your session today.
           </p>
-          <Link href="/contact">
+          <a
+            href="https://app.squareup.com/appointments/book/9cjimearmu7iz4/LM76T0GTP6A6G/start"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button className="bg-sol-brown hover:bg-sol-orange px-8 py-6 text-lg text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105">
               Book a Session Now
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
 
