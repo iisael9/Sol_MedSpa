@@ -408,7 +408,7 @@ export default function LandingPage() {
           <h4 className="text-2xl font-serif text-stone-800 mb-2">
             <span className="font-bold italic">Sol</span> Medspa
           </h4>
-          <p className="text-stone-600 mb-6">Launching Soon in Your City</p>
+          <p className="text-stone-600 mb-6">Elevate Your Glow at Home</p>
 
           <div className="flex justify-center space-x-4 mb-8">
             <a
