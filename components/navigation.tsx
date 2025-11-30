@@ -109,7 +109,7 @@ export function Navigation() {
                 className="hidden lg:flex items-center space-x-2 px-5 py-2.5 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark"
               >
                 <Calendar className="w-4 h-4" />
-                <span className="text-sm">Book A Session</span>
+                <span className="text-sm">Book Now</span>
                 <ExternalLink className="w-3 h-3 opacity-80" />
               </a>
 
@@ -231,7 +231,7 @@ export function Navigation() {
             <div className="mt-6">
               <Link href="/contact" onClick={() => setShowMobileMenu(false)}>
                 <Button className="w-full text-white font-medium rounded-full py-3 shadow-lg hover:shadow-xl transition-all duration-200 bg-sol-brown hover:bg-sol-brown-dark">
-                  Book a Session
+                  Book Now
                 </Button>
               </Link>
             </div>

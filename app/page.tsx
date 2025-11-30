@@ -1,11 +1,10 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Sparkles, Heart, Instagram, Facebook, X } from "lucide-react"
+import { Sparkles, Heart, Instagram, Facebook, X, Award, Calendar } from "lucide-react"
 import Image from "next/image"
 import { submitEmail } from "./actions/email"
 import { Navigation } from "@/components/navigation"
@@ -108,7 +107,7 @@ export default function LandingPage() {
               rel="noopener noreferrer"
             >
               <Button className="h-14 px-10 text-lg text-white font-medium shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark">
-                Book a Session
+                Book Now
               </Button>
             </a>
           </div>
@@ -195,7 +194,7 @@ export default function LandingPage() {
               <p className="text-stone-600 text-sm leading-relaxed">Advanced skin rejuvenation</p>
             </Card>
 
-            {/* In-Home Treatments */}
+            {/* IV Therapy */}
             <Card className="p-8 hover:shadow-lg transition-shadow text-center opacity-75">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center">
@@ -204,13 +203,13 @@ export default function LandingPage() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                      d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
                     />
                   </svg>
                 </div>
               </div>
-              <h5 className="text-xl font-serif text-stone-800 mb-3">In-Home Treatments</h5>
-              <p className="text-stone-600 text-sm leading-relaxed">We bring the med spa to you</p>
+              <h5 className="text-xl font-serif text-stone-800 mb-3">IV Therapy</h5>
+              <p className="text-stone-600 text-sm leading-relaxed">Hydration and wellness infusions</p>
             </Card>
           </div>
         </div>
@@ -225,8 +224,8 @@ export default function LandingPage() {
               We bring the luxury medical spa experience directly to your home.
             </p>
             <p className="text-lg text-stone-600 leading-relaxed max-w-3xl mx-auto">
-              Experience comfort, safety, and convenience with our mobile concierge service—premium treatments in the
-              privacy of your own space.
+              Experience comfort, safety, and convenience with our concierge service—premium treatments in the privacy
+              of your own space.
             </p>
           </div>
 
@@ -247,7 +246,7 @@ export default function LandingPage() {
             <div className="lg:pl-8">
               <h4 className="text-2xl font-serif text-stone-800 mb-6">Why Choose Our Concierge Model</h4>
               <p className="text-lg text-stone-600 mb-6 leading-relaxed">
-                Our mobile spa model brings professional, medical-grade treatments to the comfort and safety of your
+                Our concierge spa model brings professional, medical-grade treatments to the comfort and safety of your
                 home. No travel, no waiting rooms—just pure relaxation and results.
               </p>
 
@@ -266,19 +265,13 @@ export default function LandingPage() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 bg-sol-brown">
-                    <Image
-                      src="/images/sol-logo-icon.svg"
-                      alt="Sol MedSpa Logo"
-                      width={16}
-                      height={16}
-                      className="w-4 h-4 brightness-0 invert"
-                    />
+                    <Award className="w-4 h-4 text-white" />
                   </div>
                   <span className="text-stone-700">Medical-grade equipment and premium products</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 bg-sol-brown">
-                    <Sparkles className="w-4 h-4 text-white" />
+                    <Calendar className="w-4 h-4 text-white" />
                   </div>
                   <span className="text-stone-700">Flexible scheduling that fits your lifestyle</span>
                 </div>
@@ -364,7 +357,7 @@ export default function LandingPage() {
               size="lg"
               className="h-14 px-10 text-lg text-white font-medium shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark"
             >
-              Book a Session Now
+              Book Now
             </Button>
           </a>
         </div>

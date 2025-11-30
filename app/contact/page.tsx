@@ -101,7 +101,7 @@ export default function ContactPage() {
                 className="inline-flex items-center space-x-2 px-8 py-4 bg-sol-brown text-white font-semibold rounded-xl shadow-lg hover:bg-sol-brown-dark hover:shadow-xl transition-all duration-200 transform hover:scale-105"
               >
                 <Calendar className="w-5 h-5" />
-                <span>Book A Session</span>
+                <span>Book Now</span>
                 <ExternalLink className="w-4 h-4" />
               </a>
 

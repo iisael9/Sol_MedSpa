@@ -179,7 +179,7 @@ export default function BeforeAfterPage() {
             rel="noopener noreferrer"
           >
             <Button className="bg-sol-brown hover:bg-sol-orange px-8 py-6 text-lg text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105">
-              Book a Session Now
+              Book Now
             </Button>
           </a>
         </div>
