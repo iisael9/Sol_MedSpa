@@ -288,7 +288,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-stone-800 mb-1">Location</h3>
-                      <p className="text-stone-600">Serving Los Angeles & Surrounding Areas</p>
+                      <p className="text-stone-600">Serving Los Angeles, Riverside County & Surrounding Areas</p>
                     </div>
                   </div>
                 </div>
