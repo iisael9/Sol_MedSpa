@@ -179,7 +179,7 @@ export default function LandingPage() {
             {/* GLP-1 Inhibitors */}
             <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300">
               <Image
-                src="/wellness-weight-management-medical-professional-co.jpg"
+                src="/elegant-woman-receiving-wellness-consultation-with.jpg"
                 alt="GLP-1 Inhibitors"
                 width={450}
                 height={600}
@@ -259,7 +259,7 @@ export default function LandingPage() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/concierge-home-luxury-medspa-treatment.jpg"
+                  src="/beautiful-woman-receiving-luxury-facial-treatment-.jpg"
                   alt="Professional treatment setup"
                   width={600}
                   height={400}
