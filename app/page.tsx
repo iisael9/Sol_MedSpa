@@ -83,45 +83,33 @@ export default function LandingPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 lg:bg-none bg-cover bg-center bg-[url('/images/design-mode/v0_image-2.png')]">
-        <div className="absolute inset-0 bg-black/40 lg:hidden"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="lg:grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <h2 className="text-4xl md:text-6xl font-serif lg:text-stone-800 text-white mb-6 leading-tight">
-                Radiant Skin.
-                <span className="block text-sol-orange">Reimagined.</span>
-              </h2>
-              <p className="text-2xl md:text-3xl font-serif mb-6 lg:text-sol-brown text-white">Host the glow</p>
+      <section className="relative h-[80vh] min-h-[600px] overflow-hidden">
+        <Image
+          src="/elegant-woman-beauty-portrait-close-up-face.jpg"
+          alt="Radiant Beauty"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/50 to-stone-900/70" />
 
-              <p className="text-xl lg:text-stone-600 text-white mb-8 leading-relaxed">
-                <span className="font-bold italic">Sol</span> Medspa - elevate your glow, in the comfort of your home.
-                Host your own botox party.
-              </p>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center px-4 max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
+              Radiant Skin.
+              <span className="block text-sol-orange mt-2">Reimagined.</span>
+            </h1>
+            <p className="text-3xl md:text-4xl font-serif text-white mb-6">Host the glow</p>
+            <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
+              <span className="font-bold italic">Sol</span> Medspa - elevate your glow, in the comfort of your home.
+              Host your own botox party.
+            </p>
 
-              {/* Book a Session Button */}
-              <div className="flex justify-center lg:justify-start">
-                <Link href="/contact">
-                  <Button className="h-14 px-10 text-lg text-white font-medium shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark">
-                    Book a Session
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative hidden lg:block">
-              {/* Main Hero Image */}
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-200 shadow-2xl">
-                <Image
-                  src="/images/design-mode/v0_image-2.png"
-                  alt="Luxury medspa beauty party at home - male doctor providing gentle skin consultation to woman while two friends chat in elegant modern living room with warm beige tones"
-                  width={400}
-                  height={500}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-              </div>
-            </div>
+            <Link href="/contact">
+              <Button className="h-14 px-10 text-lg text-white font-medium shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:scale-105 bg-sol-brown hover:bg-sol-brown-dark">
+                Book a Session
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
