@@ -13,10 +13,10 @@ export default function CarePage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] overflow-hidden mt-20">
         <Image
-          src="/elegant-woman-beauty-portrait-close-up-face.jpg"
+          src="/images/image.png"
           alt="Elegance & Care"
           fill
-          className="object-cover"
+          className="object-cover object-[center_35%]"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 to-stone-900/60" />
