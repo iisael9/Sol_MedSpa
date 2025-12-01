@@ -148,28 +148,32 @@ export default function LandingPage() {
             </Link>
 
             {/* Botox & Dysport */}
-            <Card className="p-8 hover:shadow-lg transition-shadow text-center">
-              <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 rounded-full bg-sol-cream-bg flex items-center justify-center">
-                  <Sparkles className="w-8 h-8 text-sol-brown" />
+            <Link href="/botox-dysport">
+              <Card className="p-8 hover:shadow-lg transition-shadow text-center cursor-pointer">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-sol-cream-bg flex items-center justify-center">
+                    <Sparkles className="w-8 h-8 text-sol-brown" />
+                  </div>
                 </div>
-              </div>
-              <h5 className="text-xl font-serif text-stone-800 mb-3">Botox & Dysport</h5>
-              <p className="text-stone-600 text-sm leading-relaxed">
-                Smooth wrinkles and fine lines for a refreshed, youthful appearance
-              </p>
-            </Card>
+                <h5 className="text-xl font-serif text-stone-800 mb-3">Botox & Dysport</h5>
+                <p className="text-stone-600 text-sm leading-relaxed">
+                  Smooth wrinkles and fine lines for a refreshed, youthful appearance
+                </p>
+              </Card>
+            </Link>
 
             {/* GLP-1 Inhibitors */}
-            <Card className="p-8 hover:shadow-lg transition-shadow text-center">
-              <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 rounded-full bg-sol-cream-bg flex items-center justify-center">
-                  <Sparkles className="w-8 h-8 text-sol-brown" />
+            <Link href="/glp1">
+              <Card className="p-8 hover:shadow-lg transition-shadow text-center cursor-pointer">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-sol-cream-bg flex items-center justify-center">
+                    <Sparkles className="w-8 h-8 text-sol-brown" />
+                  </div>
                 </div>
-              </div>
-              <h5 className="text-xl font-serif text-stone-800 mb-3">GLP-1 Inhibitors</h5>
-              <p className="text-stone-600 text-sm leading-relaxed">Available upon request</p>
-            </Card>
+                <h5 className="text-xl font-serif text-stone-800 mb-3">GLP-1 Inhibitors</h5>
+                <p className="text-stone-600 text-sm leading-relaxed">Available upon request</p>
+              </Card>
+            </Link>
           </div>
 
           <h4 className="text-2xl font-serif text-stone-800 mb-8 text-center">Coming Soon</h4>
