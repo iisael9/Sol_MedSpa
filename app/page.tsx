@@ -8,6 +8,7 @@ import { Sparkles, Heart, Instagram, Facebook, X, Award, Calendar } from "lucide
 import Image from "next/image"
 import { submitEmail } from "./actions/email"
 import { Navigation } from "@/components/navigation"
+import Link from "next/link"
 
 export default function LandingPage() {
   const [email, setEmail] = useState("")
@@ -128,21 +129,23 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {/* Botox Party Experience */}
-            <Card className="p-8 hover:shadow-lg transition-shadow text-center relative">
-              <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold text-white bg-sol-orange">
-                Group Discounts
-              </div>
-              <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 rounded-full bg-sol-cream-bg flex items-center justify-center">
-                  <Heart className="w-8 h-8 text-sol-brown" />
+            <Link href="/botox-party">
+              <Card className="p-8 hover:shadow-lg transition-shadow text-center relative cursor-pointer">
+                <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold text-white bg-sol-orange">
+                  Group Discounts
                 </div>
-              </div>
-              <h5 className="text-xl font-serif text-stone-800 mb-3">Botox Party Experience</h5>
-              <p className="text-stone-600 text-sm leading-relaxed mb-2">
-                Host a private Botox party at home with friends
-              </p>
-              <p className="text-sol-orange text-sm font-medium">Special pricing for groups of 3+</p>
-            </Card>
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-sol-cream-bg flex items-center justify-center">
+                    <Heart className="w-8 h-8 text-sol-brown" />
+                  </div>
+                </div>
+                <h5 className="text-xl font-serif text-stone-800 mb-3">Botox Party Experience</h5>
+                <p className="text-stone-600 text-sm leading-relaxed mb-2">
+                  Host a private Botox party at home with friends
+                </p>
+                <p className="text-sol-orange text-sm font-medium">Special pricing for groups of 3+</p>
+              </Card>
+            </Link>
 
             {/* Botox & Dysport */}
             <Card className="p-8 hover:shadow-lg transition-shadow text-center">
