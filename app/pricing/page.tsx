@@ -81,77 +81,77 @@ export default function PricingPage() {
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             {/* Anti-Wrinkle */}
             <div>
-              <h3 className="text-2xl font-serif text-foreground mb-6">Anti-Wrinkle Injectables</h3>
+              <h3 className="text-3xl font-serif text-foreground mb-6">Anti-Wrinkle Injectables</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center pb-3 border-b border-border">
                   <div>
-                    <span className="text-foreground font-medium">Dysport</span>
-                    <p className="text-xs text-muted-foreground">First time client</p>
+                    <span className="text-foreground font-medium text-lg">Dysport</span>
+                    <p className="text-sm text-muted-foreground">First time client</p>
                   </div>
-                  <span className="text-sol-brown font-semibold text-lg">$6 / unit</span>
+                  <span className="text-sol-brown font-semibold text-xl">$6 / unit</span>
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-border">
                   <div>
-                    <span className="text-foreground font-medium">Botox</span>
-                    <p className="text-xs text-muted-foreground">First time client</p>
+                    <span className="text-foreground font-medium text-lg">Botox</span>
+                    <p className="text-sm text-muted-foreground">First time client</p>
                   </div>
-                  <span className="text-sol-brown font-semibold text-lg">$10 / unit</span>
+                  <span className="text-sol-brown font-semibold text-xl">$10 / unit</span>
                 </div>
               </div>
             </div>
 
             {/* Weight Management */}
             <div>
-              <h3 className="text-2xl font-serif text-foreground mb-6">Weight Management</h3>
+              <h3 className="text-3xl font-serif text-foreground mb-6">Weight Management</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center pb-3 border-b border-border">
                   <div>
-                    <span className="text-foreground font-medium">Mounjaro (tirzepatide)</span>
-                    <p className="text-xs text-muted-foreground">Month-long treatment</p>
+                    <span className="text-foreground font-medium text-lg">Mounjaro (tirzepatide)</span>
+                    <p className="text-sm text-muted-foreground">Month-long treatment</p>
                   </div>
-                  <span className="text-sol-brown font-semibold text-lg">$999</span>
+                  <span className="text-sol-brown font-semibold text-xl">$999</span>
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-border">
                   <div>
-                    <span className="text-foreground font-medium">Wegovy (semaglutide)</span>
-                    <p className="text-xs text-muted-foreground">Month-long treatment</p>
+                    <span className="text-foreground font-medium text-lg">Wegovy (semaglutide)</span>
+                    <p className="text-sm text-muted-foreground">Month-long treatment</p>
                   </div>
-                  <span className="text-sol-brown font-semibold text-lg">$1199</span>
+                  <span className="text-sol-brown font-semibold text-xl">$1199</span>
                 </div>
               </div>
             </div>
 
             {/* IV Therapy */}
             <div>
-              <h3 className="text-2xl font-serif text-foreground mb-6">IV Therapy</h3>
+              <h3 className="text-3xl font-serif text-foreground mb-6">IV Therapy</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center pb-3 border-b border-border">
                   <div>
-                    <span className="text-foreground font-medium">Basic Hydration</span>
-                    <p className="text-xs text-muted-foreground">Sodium chloride solution</p>
+                    <span className="text-foreground font-medium text-lg">Basic Hydration</span>
+                    <p className="text-sm text-muted-foreground">Sodium chloride solution</p>
                   </div>
-                  <span className="text-sol-brown font-semibold text-lg">$120</span>
+                  <span className="text-sol-brown font-semibold text-xl">$120</span>
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-border">
                   <div>
-                    <span className="text-foreground font-medium">Advanced Hydration</span>
-                    <p className="text-xs text-muted-foreground">Balanced crystalloids with electrolytes</p>
+                    <span className="text-foreground font-medium text-lg">Advanced Hydration</span>
+                    <p className="text-sm text-muted-foreground">Balanced crystalloids with electrolytes</p>
                   </div>
-                  <span className="text-sol-brown font-semibold text-lg">$170</span>
+                  <span className="text-sol-brown font-semibold text-xl">$170</span>
                 </div>
               </div>
             </div>
 
             {/* Coming Soon Services */}
             <div>
-              <h3 className="text-2xl font-serif text-foreground mb-6">
-                Additional Services <span className="text-sm text-muted-foreground font-sans">(Coming Soon)</span>
+              <h3 className="text-3xl font-serif text-foreground mb-6">
+                Additional Services <span className="text-base text-muted-foreground font-sans">(Coming Soon)</span>
               </h3>
               <div className="p-6 bg-muted rounded-lg border border-border">
-                <p className="text-muted-foreground text-center mb-3">
+                <p className="text-muted-foreground text-center mb-3 text-base">
                   Fillers, laser therapy, microneedling, and chemical peels will be available soon.
                 </p>
-                <p className="text-muted-foreground text-center text-sm">
+                <p className="text-muted-foreground text-center text-base">
                   Check back for updates on our expanding service menu.
                 </p>
               </div>
@@ -160,7 +160,7 @@ export default function PricingPage() {
 
           {/* Additional Note */}
           <div className="text-center mb-16 p-6 bg-white rounded-lg border border-border">
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted-foreground text-base">
               If you don't see what you're looking for, feel free to reach out about additional product and service
               availability.
             </p>
@@ -168,7 +168,7 @@ export default function PricingPage() {
 
           {/* CTA */}
           <div className="text-center">
-            <p className="text-muted-foreground mb-6">Ready to book your visit or ask a question?</p>
+            <p className="text-muted-foreground mb-6 text-lg">Ready to book your visit or ask a question?</p>
             <Link href="/contact">
               <Button
                 size="lg"
