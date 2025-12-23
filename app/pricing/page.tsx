@@ -39,16 +39,16 @@ export default function PricingPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">Treatment Menu & Pricing</h2>
-            <p className="text-muted-foreground mb-4">Founders' Introductory Pricing</p>
-            <p className="text-foreground text-sm max-w-3xl mx-auto mb-6 font-semibold">
+            <p className="text-2xl md:text-3xl font-serif text-foreground mb-4">Founders' Introductory Pricing</p>
+            <p className="text-xl md:text-2xl text-foreground mb-6 font-semibold">
               Grand Opening – Founders' Introductory Pricing
             </p>
-            <p className="text-muted-foreground text-sm max-w-3xl mx-auto mb-6">
+            <p className="text-foreground text-lg max-w-3xl mx-auto mb-6">
               For a limited time, enjoy Founders' Pricing during our Grand Opening. Pricing reflects up to 50% off our
               future standard rates.
             </p>
             <div className="w-16 h-px bg-border mx-auto mb-6" />
-            <p className="text-foreground italic font-serif text-lg">Where Skin Meets Soul</p>
+            <p className="text-foreground italic font-serif text-xl">Where Skin Meets Soul</p>
           </div>
 
           {/* Grand Opening Bonuses */}
@@ -57,22 +57,22 @@ export default function PricingPage() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-4xl font-bold text-sol-brown mb-2">10%</div>
-                <p className="text-muted-foreground text-sm">Loyalty bonus on a returning client's second visit</p>
+                <p className="text-muted-foreground text-base">Loyalty bonus on a returning client's second visit</p>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-sol-brown mb-2">15%</div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-base">
                   One-time referral bonus when your referral completes a session
                 </p>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-sol-brown mb-2">20%</div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-base">
                   Group booking bonus for Botox parties of 3 or more clients
                 </p>
               </div>
             </div>
-            <p className="text-center text-muted-foreground text-sm mt-6 italic">
+            <p className="text-center text-muted-foreground text-base mt-6 italic">
               Founders' pricing is available for a limited time and will not be offered again.
             </p>
           </div>
@@ -117,13 +117,6 @@ export default function PricingPage() {
                     <p className="text-xs text-muted-foreground">Month-long treatment</p>
                   </div>
                   <span className="text-sol-brown font-semibold text-lg">$1199</span>
-                </div>
-                <div className="flex justify-between items-center pb-3 border-b border-border">
-                  <div>
-                    <span className="text-foreground font-medium">Ozempic</span>
-                    <p className="text-xs text-muted-foreground">50% discount for first 6 months</p>
-                  </div>
-                  <span className="text-muted-foreground text-sm italic">Contact for pricing</span>
                 </div>
               </div>
             </div>
