@@ -302,7 +302,7 @@ export default function LandingPage() {
                     {/* Doctor Image */}
                     <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-stone-100">
                       <Image
-                        src="/images/dr-juan-vasquez.jpg"
+                        src="/images/dr-juan-vasquez-new.jpg"
                         alt="Dr. Juan Vasquez Vasquez"
                         fill
                         className="object-cover"
