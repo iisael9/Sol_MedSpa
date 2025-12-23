@@ -22,8 +22,8 @@ export default function PricingPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
         </div>
-        <div className="relative z-10 h-full flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-white">
+        <div className="relative z-10 h-full flex items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-white text-center">
             <h1 className="text-6xl md:text-7xl font-serif mb-4">
               Results
               <br />
@@ -44,8 +44,8 @@ export default function PricingPage() {
               Grand Opening – Founders' Introductory Pricing
             </p>
             <p className="text-foreground text-lg max-w-3xl mx-auto mb-6">
-              For a limited time, enjoy Founders' Pricing during our Grand Opening. Pricing reflects up to 50% off our
-              future standard rates.
+              For a limited time, enjoy Founders' Pricing during our Grand Opening. Pricing reflects up to{" "}
+              <span className="text-3xl font-bold text-sol-brown">50%</span> off our future standard rates.
             </p>
             <div className="w-16 h-px bg-border mx-auto mb-6" />
             <p className="text-foreground italic font-serif text-xl">Where Skin Meets Soul</p>
@@ -80,9 +80,9 @@ export default function PricingPage() {
           {/* Pricing Grid */}
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             {/* Anti-Wrinkle */}
-            <div>
+            <div className="flex flex-col h-full">
               <h3 className="text-3xl font-serif text-foreground mb-6">Anti-Wrinkle Injectables</h3>
-              <div className="space-y-4">
+              <div className="space-y-4 flex-1">
                 <div className="flex justify-between items-center pb-3 border-b border-border">
                   <div>
                     <span className="text-foreground font-medium text-lg">Dysport</span>
@@ -101,9 +101,9 @@ export default function PricingPage() {
             </div>
 
             {/* Weight Management */}
-            <div>
+            <div className="flex flex-col h-full">
               <h3 className="text-3xl font-serif text-foreground mb-6">Weight Management</h3>
-              <div className="space-y-4">
+              <div className="space-y-4 flex-1">
                 <div className="flex justify-between items-center pb-3 border-b border-border">
                   <div>
                     <span className="text-foreground font-medium text-lg">Mounjaro (tirzepatide)</span>
@@ -122,9 +122,9 @@ export default function PricingPage() {
             </div>
 
             {/* IV Therapy */}
-            <div>
+            <div className="flex flex-col h-full">
               <h3 className="text-3xl font-serif text-foreground mb-6">IV Therapy</h3>
-              <div className="space-y-4">
+              <div className="space-y-4 flex-1">
                 <div className="flex justify-between items-center pb-3 border-b border-border">
                   <div>
                     <span className="text-foreground font-medium text-lg">Basic Hydration</span>
@@ -143,11 +143,11 @@ export default function PricingPage() {
             </div>
 
             {/* Coming Soon Services */}
-            <div>
+            <div className="flex flex-col h-full">
               <h3 className="text-3xl font-serif text-foreground mb-6">
                 Additional Services <span className="text-base text-muted-foreground font-sans">(Coming Soon)</span>
               </h3>
-              <div className="p-6 bg-muted rounded-lg border border-border">
+              <div className="p-6 bg-muted rounded-lg border border-border flex-1 flex flex-col justify-center">
                 <p className="text-muted-foreground text-center mb-3 text-base">
                   Fillers, laser therapy, microneedling, and chemical peels will be available soon.
                 </p>
