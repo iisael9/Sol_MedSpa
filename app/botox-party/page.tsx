@@ -1,6 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
-import { Users, Calendar, CreditCard, MapPin, MessageCircle } from "lucide-react"
+import { Users, Calendar, MapPin, MessageCircle } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -87,13 +87,6 @@ export default function BotoxPartyPage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <CreditCard className="w-5 h-5 text-sol-brown flex-shrink-0 mt-0.5" />
-                      <p>
-                        Botox treatments start at <span className="font-semibold">$12 per unit</span>
-                      </p>
-                    </div>
-
-                    <div className="flex items-start space-x-3">
                       <MapPin className="w-5 h-5 text-sol-brown flex-shrink-0 mt-0.5" />
                       <p>
                         A <span className="font-semibold">travel fee</span> may apply depending on your location
@@ -112,81 +105,6 @@ export default function BotoxPartyPage() {
                 height={700}
                 className="w-full h-[600px] object-cover rounded-2xl shadow-xl"
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* House Calls Section */}
-      <section className="py-20 bg-sol-cream-bg">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif text-stone-800 mb-4">House Calls</h2>
-            <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-              Pamper yourself in the comfort and privacy of your own home.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative order-2 md:order-1">
-              <Image
-                src="/images/product-01.jpg"
-                alt="Luxury spa products and flowers"
-                width={600}
-                height={700}
-                className="w-full h-[600px] object-cover rounded-2xl shadow-xl"
-              />
-            </div>
-
-            <div className="space-y-6 order-1 md:order-2">
-              <div className="bg-white p-8 rounded-2xl shadow-lg">
-                <h3 className="text-2xl font-serif text-stone-800 mb-4 text-center uppercase">
-                  Get Personalized Botox Treatments In The Comfort And Privacy Of Your Own Home
-                </h3>
-
-                <p className="text-lg font-semibold text-sol-brown mb-6 text-center">
-                  A BUSY MOM & CELEBRITY FAVORITE!
-                </p>
-
-                <p className="text-stone-700 leading-relaxed mb-6">
-                  Each one-on-one visit includes an in-depth cosmetic consultation. By booking a House Call, you'll also
-                  qualify for my Botox rewards programs at your next in-house or in-office appointment.
-                </p>
-
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-sol-brown uppercase text-sm tracking-wider">Details</h4>
-
-                  <div className="space-y-3 text-stone-700">
-                    <div className="flex items-start space-x-3">
-                      <MapPin className="w-5 h-5 text-sol-brown flex-shrink-0 mt-0.5" />
-                      <p>
-                        House Calls are available <span className="font-semibold">only in the Los Angeles area</span>
-                      </p>
-                    </div>
-
-                    <div className="flex items-start space-x-3">
-                      <Calendar className="w-5 h-5 text-sol-brown flex-shrink-0 mt-0.5" />
-                      <p>
-                        House Calls require a <span className="font-semibold">35-unit minimum per visit</span>
-                      </p>
-                    </div>
-
-                    <div className="flex items-start space-x-3">
-                      <CreditCard className="w-5 h-5 text-sol-brown flex-shrink-0 mt-0.5" />
-                      <p>
-                        Botox treatments start at <span className="font-semibold">$12 per unit</span>
-                      </p>
-                    </div>
-
-                    <div className="flex items-start space-x-3">
-                      <MapPin className="w-5 h-5 text-sol-brown flex-shrink-0 mt-0.5" />
-                      <p>
-                        A <span className="font-semibold">travel fee</span> may apply depending on your location
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

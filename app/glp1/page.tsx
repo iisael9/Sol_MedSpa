@@ -29,16 +29,12 @@ export default function GLP1Page() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-serif font-bold text-stone-800 mb-6">What Are GLP-1 Inhibitors?</h2>
+              <h2 className="text-3xl font-serif font-bold text-stone-800 mb-6">GLP-1 Weight Management</h2>
               <p className="text-stone-600 leading-relaxed mb-4">
-                GLP-1 (Glucagon-Like Peptide-1) inhibitors are a class of medications that help regulate blood sugar
-                levels and support weight management. Originally developed for type 2 diabetes treatment, these
-                medications have shown remarkable effectiveness in promoting healthy weight loss.
+                Sol Medspa offers medically supervised GLP-1 weight management treatments designed to support sustainable weight loss and improved metabolic health. 
               </p>
               <p className="text-stone-600 leading-relaxed mb-6">
-                GLP-1 medications work by mimicking a natural hormone that helps control appetite, slow digestion, and
-                regulate blood sugar levels. When combined with a healthy diet and exercise plan, they can be a powerful
-                tool for achieving your wellness goals.
+                GLP-1 medications work by regulating appetite, increasing feelings of fullness, and reducing cravings. Treatment plans are personalized and may include ongoing monitoring and lifestyle guidance to help clients achieve and maintain their goals safely and effectively.
               </p>
 
               <div className="space-y-3">
