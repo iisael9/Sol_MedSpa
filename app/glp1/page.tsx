@@ -5,10 +5,38 @@ import { Card } from "@/components/ui/card"
 import { Sparkles, Heart, TrendingDown, Check } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "GLP-1 Weight Management | Mounjaro & Wegovy in Los Angeles",
+  description:
+    "Medical weight management with GLP-1 treatments (Mounjaro, Wegovy) delivered to your home in Los Angeles & Riverside County. Personalized care from Sol Medspa.",
+  alternates: {
+    canonical: "/glp1",
+  },
+}
 
 export default function GLP1Page() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sol-cream-bg to-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalTherapy",
+            name: "GLP-1 Weight Management",
+            description: "Medically supervised GLP-1 therapy for weight management and metabolic health",
+            medicationUsed: ["Mounjaro", "Wegovy", "Semaglutide", "Tirzepatide"],
+            provider: {
+              "@type": "MedicalBusiness",
+              name: "Sol Medspa",
+              areaServed: "Los Angeles, Riverside County & Surrounding Areas",
+            },
+          }),
+        }}
+      />
+
       <Navigation />
 
       {/* Hero Section */}
@@ -29,12 +57,15 @@ export default function GLP1Page() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-serif font-bold text-stone-800 mb-6">GLP-1 Weight Management</h2>
+              <h2 className="text-3xl font-serif font-bold text-stone-800 mb-6">What Are GLP-1 Inhibitors?</h2>
               <p className="text-stone-600 leading-relaxed mb-4">
-                Sol Medspa offers medically supervised GLP-1 weight management treatments designed to support sustainable weight loss and improved metabolic health. 
+                Sol Medspa offers medically supervised GLP-1 weight management treatments designed to support
+                sustainable weight loss and improved metabolic health.
               </p>
               <p className="text-stone-600 leading-relaxed mb-6">
-                GLP-1 medications work by regulating appetite, increasing feelings of fullness, and reducing cravings. Treatment plans are personalized and may include ongoing monitoring and lifestyle guidance to help clients achieve and maintain their goals safely and effectively.
+                GLP-1 medications work by regulating appetite, increasing feelings of fullness, and reducing cravings.
+                Treatment plans are personalized and may include ongoing monitoring and lifestyle guidance to help
+                clients achieve and maintain their goals safely and effectively.
               </p>
 
               <div className="space-y-3">
@@ -60,7 +91,7 @@ export default function GLP1Page() {
             <div className="relative">
               <Image
                 src="/images/whatyousee.jpg"
-                alt="GLP-1 Treatment"
+                alt="Confident woman looking in mirror representing weight management success"
                 width={1300}
                 height={1300}
                 className="rounded-2xl shadow-xl"

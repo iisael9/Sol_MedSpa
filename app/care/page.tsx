@@ -4,6 +4,16 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle2, AlertCircle, Info, Clock, ShieldAlert } from "lucide-react"
 import { Navigation } from "@/components/navigation"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Patient Care Guide | Preparation & Aftercare Instructions",
+  description:
+    "Complete guide for preparing for and caring after your mobile medspa treatment. Learn about appointment preparation, aftercare instructions, and what to expect.",
+  alternates: {
+    canonical: "/care",
+  },
+}
 
 export default function CarePage() {
   return (
@@ -14,7 +24,7 @@ export default function CarePage() {
       <section className="relative h-[60vh] min-h-[500px] overflow-hidden mt-20">
         <Image
           src="/images/image.png"
-          alt="Elegance & Care"
+          alt="Elegant patient care experience at Sol Medspa"
           fill
           className="object-cover object-[center_35%]"
           priority

@@ -3,10 +3,37 @@ import { Button } from "@/components/ui/button"
 import { Users, Calendar, MapPin, MessageCircle } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Botox Party Experience | Host At-Home Botox Parties in LA",
+  description:
+    "Host a private Botox party at home in Los Angeles or Riverside County. Groups of 3+ receive special pricing. Book your mobile Botox party experience today!",
+  alternates: {
+    canonical: "/botox-party",
+  },
+}
 
 export default function BotoxPartyPage() {
   return (
     <main className="min-h-screen bg-sol-cream">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "Botox Party Experience",
+            provider: {
+              "@type": "MedicalBusiness",
+              name: "Sol Medspa",
+            },
+            areaServed: "Los Angeles, Riverside County & Surrounding Areas",
+            description: "Host a private Botox party at home with friends. Special pricing for groups of 3 or more.",
+          }),
+        }}
+      />
+
       <Navigation />
 
       {/* Hero Section */}
@@ -25,7 +52,7 @@ export default function BotoxPartyPage() {
           <div className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src="/group-of-diverse-women-lying-together-laughing-and.jpg"
-              alt="Women enjoying botox party together"
+              alt="Group of women enjoying a Botox party experience at home"
               width={1000}
               height={600}
               className="w-full h-[400px] md:h-[500px] object-cover"

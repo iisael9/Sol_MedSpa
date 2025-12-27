@@ -5,10 +5,40 @@ import { Card } from "@/components/ui/card"
 import { Sparkles, Clock, Shield, Check } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Botox & Dysport Treatments | Mobile Injections in Los Angeles",
+  description:
+    "Professional Botox and Dysport treatments delivered to your home in Los Angeles & Riverside County. Smooth wrinkles and fine lines with our mobile medical spa service.",
+  alternates: {
+    canonical: "/botox-dysport",
+  },
+}
 
 export default function BotoxDysportPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sol-cream-bg to-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            name: "Botox & Dysport Treatments",
+            description:
+              "Professional Botox and Dysport anti-wrinkle injectable treatments for smoothing fine lines and wrinkles",
+            procedureType: "Cosmetic Injection",
+            medicationUsed: ["Botox", "Dysport"],
+            provider: {
+              "@type": "MedicalBusiness",
+              name: "Sol Medspa",
+              areaServed: "Los Angeles, Riverside County & Surrounding Areas",
+            },
+          }),
+        }}
+      />
+
       <Navigation />
 
       {/* Hero Section */}
@@ -63,7 +93,7 @@ export default function BotoxDysportPage() {
             <div className="relative">
               <Image
                 src="/images/face-01.jpg"
-                alt="Botox & Dysport Treatment"
+                alt="Woman with smooth, youthful skin after Botox treatment"
                 width={500}
                 height={500}
                 className="rounded-2xl shadow-xl object-cover"

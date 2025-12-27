@@ -78,6 +78,129 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-sol-cream-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalBusiness",
+            "@id": "https://sol-medspa.com",
+            name: "Sol Medspa",
+            alternateName: "Sol Medical Spa",
+            description:
+              "Mobile medical spa offering Botox, Dysport, GLP-1 treatments, and aesthetic services in Los Angeles and Riverside County",
+            url: "https://sol-medspa.com",
+            logo: "https://sol-medspa.com/images/sol-logo-icon.svg",
+            image: "https://sol-medspa.com/elegant-woman-beauty-portrait-close-up-face.jpg",
+            telephone: "+1-310-876-2788",
+            email: "contact@sol-medspa.com",
+            priceRange: "$$",
+            areaServed: [
+              {
+                "@type": "City",
+                name: "Los Angeles",
+                address: {
+                  "@type": "PostalAddress",
+                  addressRegion: "CA",
+                  addressCountry: "US",
+                },
+              },
+              {
+                "@type": "AdministrativeArea",
+                name: "Riverside County",
+                address: {
+                  "@type": "PostalAddress",
+                  addressRegion: "CA",
+                  addressCountry: "US",
+                },
+              },
+            ],
+            serviceType: "Mobile Medical Spa",
+            medicalSpecialty: "Aesthetic Medicine",
+            availableService: [
+              {
+                "@type": "MedicalProcedure",
+                name: "Botox Injections",
+                description: "Anti-wrinkle injectable treatments",
+              },
+              {
+                "@type": "MedicalProcedure",
+                name: "Dysport Injections",
+                description: "Anti-wrinkle injectable treatments",
+              },
+              {
+                "@type": "MedicalTherapy",
+                name: "GLP-1 Weight Management",
+                description: "Medical weight management treatments",
+              },
+              {
+                "@type": "MedicalProcedure",
+                name: "Botox Party Experience",
+                description: "Group aesthetic treatment experiences at home",
+              },
+            ],
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Medical Spa Services",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Botox",
+                    description: "Botox anti-wrinkle injections",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Dysport",
+                    description: "Dysport anti-wrinkle injections",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "GLP-1 Inhibitors",
+                    description: "Weight management treatments",
+                  },
+                },
+              ],
+            },
+            openingHoursSpecification: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              opens: "00:00",
+              closes: "23:59",
+              description: "By Appointment Only",
+            },
+            sameAs: ["https://www.instagram.com/sol.medspa/", "https://www.facebook.com/profile.php?id=61584058650535"],
+            founder: {
+              "@type": "Physician",
+              name: "Juan Vasquez Vasquez",
+              honorificSuffix: "MD",
+              jobTitle: "Medical Director",
+              alumniOf: [
+                {
+                  "@type": "EducationalOrganization",
+                  name: "University of California, Berkeley",
+                },
+                {
+                  "@type": "EducationalOrganization",
+                  name: "University of California San Francisco School of Medicine",
+                },
+                {
+                  "@type": "EducationalOrganization",
+                  name: "New York University School of Medicine",
+                },
+              ],
+            },
+          }),
+        }}
+      />
+
       {/* Header Navigation */}
       <Navigation />
 
@@ -85,7 +208,7 @@ export default function LandingPage() {
       <section className="relative h-[80vh] min-h-[600px] overflow-hidden">
         <Image
           src="/elegant-woman-beauty-portrait-close-up-face.jpg"
-          alt="Radiant Beauty"
+          alt="Beautiful woman with radiant, smooth skin representing Sol Medspa's aesthetic treatments"
           fill
           className="object-cover"
           priority
@@ -118,14 +241,14 @@ export default function LandingPage() {
       {/* Services Section */}
       <section id="services" className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-serif text-stone-800 mb-4 text-center">Our Services</h3>
+          <h2 className="text-4xl font-serif text-stone-800 mb-4 text-center">Our Services</h2>
 
           <p className="text-center text-stone-600 text-lg mb-12 max-w-3xl mx-auto">
             <span className="font-bold italic">Sol</span> Medspa offers premium aesthetic treatments designed to enhance
             your natural beauty with the highest standards of care and expertise.
           </p>
 
-          <h4 className="text-2xl font-serif text-stone-800 mb-8 text-center">Core Services</h4>
+          <h3 className="text-2xl font-serif text-stone-800 mb-8 text-center">Core Services</h3>
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {/* Botox Party Experience */}
@@ -172,6 +295,7 @@ export default function LandingPage() {
                 </div>
                 <h5 className="text-xl font-serif text-stone-800 mb-3">GLP-1 Inhibitors</h5>
                 <p className="text-stone-600 text-sm leading-relaxed">Available upon request</p>
+                <p className="text-sol-orange text-sm font-medium">Click Here to Learn More!</p>
               </Card>
             </Link>
           </div>
@@ -226,7 +350,7 @@ export default function LandingPage() {
       <section id="concierge-experience" className="py-16 px-4 bg-sol-cream-bg">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-serif font-bold text-stone-800 mb-6">Concierge Experience</h3>
+            <h2 className="text-4xl font-serif font-bold text-stone-800 mb-6">Concierge Experience</h2>
             <p className="text-xl text-stone-600 leading-relaxed max-w-3xl mx-auto mb-4">
               We bring the luxury medical spa experience directly to your home.
             </p>
@@ -242,7 +366,7 @@ export default function LandingPage() {
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/pexels-shiny-diamond-3373721.jpg"
-                  alt="Professional medical aesthetic treatments"
+                  alt="Professional aesthetic treatment in comfortable home setting"
                   width={600}
                   height={400}
                   className="w-full h-full object-cover"
@@ -290,10 +414,8 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="mt-16"></div>
-
           <div className="mt-16" id="about">
-            <h4 className="text-2xl font-serif text-stone-800 text-center mb-8">Why Choose Us</h4>
+            <h3 className="text-2xl font-serif text-stone-800 text-center mb-8">Why Choose Us</h3>
 
             <div className="max-w-4xl mx-auto">
               <Card className="border-stone-200 shadow-lg bg-white">
@@ -350,10 +472,13 @@ export default function LandingPage() {
       {/* Ready to Transform CTA Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-4xl md:text-5xl font-serif text-stone-800 mb-6">Ready to Transform Your Look?</h3>
+          <h2 className="text-4xl md:text-5xl font-serif text-stone-800 mb-6">Ready to Transform Your Look?</h2>
           <p className="text-xl text-stone-600 mb-8 leading-relaxed">
-            Experience the <span className="font-bold italic">Sol</span> Medspa difference. Book your consultation
-            today.
+            Experience the <span className="font-bold italic">Sol</span> Medspa difference.{" "}
+            <Link href="/contact" className="underline hover:text-sol-brown">
+              Book your consultation today
+            </Link>
+            .
           </p>
           <a
             href="https://app.squareup.com/appointments/book/9cjimearmu7iz4/LM76T0GTP6A6G/start"
