@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
 import { Mail, Phone, MapPin, Instagram, Facebook, Calendar, ExternalLink } from "lucide-react"
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 export default function ContactClient() {
   useEffect(() => {
@@ -360,6 +361,9 @@ export default function ContactClient() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

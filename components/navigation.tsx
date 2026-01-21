@@ -4,6 +4,7 @@ import { X, Menu, Phone, Mail, MapPin, Calendar, ExternalLink, ChevronDown } fro
 import Link from "next/link"
 import { useState } from "react"
 import Image from "next/image"
+import { SkipLink } from "@/components/skip-link"
 
 export function Navigation() {
   const [showMobileMenu, setShowMobileMenu] = useState(false)
@@ -20,7 +21,8 @@ export function Navigation() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-stone-200/50 shadow-sm">
+      <SkipLink />
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-stone-200/50 shadow-sm" role="banner">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-3">

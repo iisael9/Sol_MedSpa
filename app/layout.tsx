@@ -77,6 +77,8 @@ export const metadata: Metadata = {
   generator: "v0.app",
 }
 
+import { CookieConsent } from "@/components/cookie-consent"
+
 export default function RootLayout({
   children,
 }: {
@@ -112,7 +114,10 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>{children}</body>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   )
 }

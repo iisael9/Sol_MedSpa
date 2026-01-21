@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 import Link from "next/link"
 
 export default function PricingClient() {
@@ -195,13 +196,7 @@ export default function PricingClient() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-border">
-        <div className="max-w-7xl mx-auto text-center text-muted-foreground">
-          <p className="mb-4">
-            © 2025 <span className="font-bold italic">Sol</span> MedSpa. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

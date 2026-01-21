@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Users, Calendar, MapPin, MessageCircle } from "lucide-react"
 import Image from "next/image"
@@ -157,68 +158,7 @@ export default function BotoxPartyPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-stone-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            <div>
-              <h3 className="text-xl font-serif mb-4">
-                <span className="italic font-bold">Sol</span> Medspa
-              </h3>
-              <p className="text-stone-400 leading-relaxed">
-                Premium aesthetic treatments designed to enhance your natural beauty with the highest standards of care
-                and expertise.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-stone-400">
-                <li>
-                  <Link href="/" className="hover:text-white transition-colors">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#services" className="hover:text-white transition-colors">
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/botox-party" className="hover:text-white transition-colors">
-                    Botox Party
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-white transition-colors">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-stone-400">
-                <li>Los Angeles, Riverside County & Surrounding Areas</li>
-                <li>
-                  <a href="mailto:admin@sol-medspa.com" className="hover:text-white transition-colors">
-                    admin@sol-medspa.com
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:+15551234567" className="hover:text-white transition-colors">
-                    +1 (555) 123-4567
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-stone-800 pt-8 text-center text-stone-400 text-sm">
-            <p>&copy; {new Date().getFullYear()} Sol Medspa. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }
