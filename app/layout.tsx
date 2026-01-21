@@ -87,15 +87,34 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Consent Mode - Initialize BEFORE GA loads */}
+        <Script id="google-consent-init" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            
+            // Set default consent to denied
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied',
+              'ad_storage': 'denied',
+              'wait_for_update': 500
+            });
+          `}
+        </Script>
+        
+        {/* Google Analytics - Loads after consent initialization */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-Y36PQB34HY" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-Y36PQB34HY');
+            gtag('config', 'G-Y36PQB34HY', {
+              'anonymize_ip': true
+            });
           `}
         </Script>
+        
         {/* Fallback for environment variable-based GA if configured */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== "G-Y36PQB34HY" && (
           <>
@@ -108,7 +127,9 @@ export default function RootLayout({
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
+                  'anonymize_ip': true
+                });
               `}
             </Script>
           </>

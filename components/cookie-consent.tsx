@@ -13,8 +13,23 @@ export function CookieConsent() {
   useEffect(() => {
     // Check if user has already made a choice
     const consent = localStorage.getItem(COOKIE_CONSENT_KEY)
-    if (!consent) {
-      // Small delay for better UX - don't show immediately on page load
+    
+    if (consent === "accepted") {
+      // User previously accepted - grant consent
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("consent", "update", {
+          analytics_storage: "granted",
+        })
+      }
+    } else if (consent === "declined") {
+      // User previously declined - ensure consent stays denied
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("consent", "update", {
+          analytics_storage: "denied",
+        })
+      }
+    } else {
+      // No choice made yet - show banner after delay
       const timer = setTimeout(() => {
         setShowBanner(true)
       }, 1500)
@@ -25,13 +40,20 @@ export function CookieConsent() {
   const handleAccept = () => {
     localStorage.setItem(COOKIE_CONSENT_KEY, "accepted")
     setShowBanner(false)
-    // Google Analytics is already loaded, this just records consent
+    
+    // Grant consent for Google Analytics
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("consent", "update", {
+        analytics_storage: "granted",
+      })
+    }
   }
 
   const handleDecline = () => {
     localStorage.setItem(COOKIE_CONSENT_KEY, "declined")
     setShowBanner(false)
-    // Optionally disable GA tracking
+    
+    // Keep analytics storage denied (default state)
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("consent", "update", {
         analytics_storage: "denied",
@@ -40,9 +62,8 @@ export function CookieConsent() {
   }
 
   const handleClose = () => {
-    // Closing without choosing = accept (common pattern)
-    localStorage.setItem(COOKIE_CONSENT_KEY, "accepted")
-    setShowBanner(false)
+    // Closing without choosing = decline (privacy-first approach)
+    handleDecline()
   }
 
   if (!showBanner) return null
