@@ -111,6 +111,14 @@ export function Navigation() {
                   Pricing
                 </Button>
               </Link>
+              <Link href="/before-after">
+                <Button
+                  variant="ghost"
+                  className="text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-2 rounded-full transition-all duration-200"
+                >
+                  Before & After
+                </Button>
+              </Link>
             </nav>
 
             <div className="flex items-center space-x-3">
@@ -220,6 +228,14 @@ export function Navigation() {
                   className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 justify-start"
                 >
                   Pricing
+                </Button>
+              </Link>
+              <Link href="/before-after" onClick={() => setShowMobileMenu(false)}>
+                <Button
+                  variant="ghost"
+                  className="w-full text-left text-stone-600 hover:text-stone-800 hover:bg-stone-100 font-medium px-4 py-3 rounded-lg transition-all duration-200 justify-start"
+                >
+                  Before & After
                 </Button>
               </Link>
               <Link href="/contact" onClick={() => setShowMobileMenu(false)}>
