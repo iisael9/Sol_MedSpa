@@ -114,28 +114,30 @@ export function BeforeAfterPageClient() {
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mark_before-NZdyMNoJsTc7DKNMvD3aHhWZ6JzkdO.jpeg",
       after:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mark_after.JPEG-YpLal3ULpHNJd6msiBqcVYFDbHs3b6.jpeg",
-      title: "Botox Treatment",
-      description: "Smoothed forehead lines and crow's feet with natural-looking results",
+      title: "Forehead Line Treatment",
+      description: "A personalized treatment focused on softening the appearance of forehead lines.",
     },
     {
       before:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lonjino_before-LuX281Z1h6zBMxtvFfQ6bc5XKlKixl.jpeg",
       after:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lonjino_after-C7o44UK8HUuz94L7PNm9FyqwK6GaPS.jpeg",
-      title: "Lip Filler Enhancement",
-      description: "Natural lip augmentation for fuller, more defined lips",
+      title: "Forehead Line Treatment",
+      description: "A personalized treatment focused on softening the appearance of forehead lines.",
     },
     {
-      before: "/woman-with-fine-lines-before-dysport.jpg",
-      after: "/same-woman-with-reduced-fine-lines-after-dysport.jpg",
-      title: "Dysport for Fine Lines",
-      description: "Reduced fine lines around eyes and forehead for a refreshed appearance",
+      before:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mark_before2-7mvlOm5OQrfwX4FcI7MnuPwpy67RpK.jpeg",
+      after:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mark_after2.JPEG-WZqzP06R8Dgmb6Y1ho7FyiSwoPIjZK.jpeg",
+      title: "Forehead Line Treatment",
+      description: "A personalized treatment focused on softening the appearance of forehead lines.",
     },
     {
       before: "/woman-with-dull-skin-before-laser-treatment.jpg",
       after: "/same-woman-with-glowing-skin-after-laser-treatment.jpg",
-      title: "Laser Skin Rejuvenation",
-      description: "Improved skin texture, tone, and overall radiance",
+      title: "Forehead Line Treatment",
+      description: "A personalized treatment focused on softening the appearance of forehead lines.",
     },
   ]
 
