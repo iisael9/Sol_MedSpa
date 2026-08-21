@@ -151,12 +151,6 @@ export function BeforeAfterPageClient() {
       title: "Forehead Line Treatment",
       description: "A personalized treatment focused on softening the appearance of forehead lines.",
     },
-    {
-      before: "/woman-with-dull-skin-before-laser-treatment.jpg",
-      after: "/same-woman-with-glowing-skin-after-laser-treatment.jpg",
-      title: "Forehead Line Treatment",
-      description: "A personalized treatment focused on softening the appearance of forehead lines.",
-    },
   ]
 
   return (
