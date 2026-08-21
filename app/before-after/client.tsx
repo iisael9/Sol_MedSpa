@@ -79,7 +79,7 @@ function ImageComparisonSlider({
     >
       {/* Before Image */}
       <div className="absolute inset-0">
-        <Image src={beforeImage || "/placeholder.svg"} alt={beforeLabel} fill className="object-cover" />
+        <Image src={beforeImage || "/placeholder.svg"} alt={beforeLabel} fill className="object-cover object-center" />
         <div className="absolute top-4 left-4 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium">
           {beforeLabel}
         </div>
@@ -87,7 +87,7 @@ function ImageComparisonSlider({
 
       {/* After Image with clip */}
       <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
-        <Image src={afterImage || "/placeholder.svg"} alt={afterLabel} fill className="object-cover" />
+        <Image src={afterImage || "/placeholder.svg"} alt={afterLabel} fill className="object-cover object-center" />
         <div className="absolute top-4 right-4 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium">
           {afterLabel}
         </div>
@@ -116,8 +116,10 @@ export function BeforeAfterPageClient() {
       description: "Smoothed forehead lines and crow's feet with natural-looking results",
     },
     {
-      before: "/woman-with-thin-lips-before-filler.jpg",
-      after: "/same-woman-with-fuller-lips-after-filler.jpg",
+      before:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lonjino_before-LuX281Z1h6zBMxtvFfQ6bc5XKlKixl.jpeg",
+      after:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lonjino_after-C7o44UK8HUuz94L7PNm9FyqwK6GaPS.jpeg",
       title: "Lip Filler Enhancement",
       description: "Natural lip augmentation for fuller, more defined lips",
     },
