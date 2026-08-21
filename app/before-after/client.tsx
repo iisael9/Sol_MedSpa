@@ -14,11 +14,15 @@ function ImageComparisonSlider({
   afterImage,
   beforeLabel = "Before",
   afterLabel = "After",
+  beforePosition = "center",
+  afterPosition = "center",
 }: {
   beforeImage: string
   afterImage: string
   beforeLabel?: string
   afterLabel?: string
+  beforePosition?: string
+  afterPosition?: string
 }) {
   const [sliderPosition, setSliderPosition] = useState(50)
   const [isDragging, setIsDragging] = useState(false)
@@ -79,7 +83,13 @@ function ImageComparisonSlider({
     >
       {/* Before Image */}
       <div className="absolute inset-0">
-        <Image src={beforeImage || "/placeholder.svg"} alt={beforeLabel} fill className="object-cover object-center" />
+        <Image
+          src={beforeImage || "/placeholder.svg"}
+          alt={beforeLabel}
+          fill
+          className="object-cover"
+          style={{ objectPosition: beforePosition }}
+        />
         <div className="absolute top-4 left-4 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium">
           {beforeLabel}
         </div>
@@ -87,7 +97,13 @@ function ImageComparisonSlider({
 
       {/* After Image with clip */}
       <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
-        <Image src={afterImage || "/placeholder.svg"} alt={afterLabel} fill className="object-cover object-center" />
+        <Image
+          src={afterImage || "/placeholder.svg"}
+          alt={afterLabel}
+          fill
+          className="object-cover"
+          style={{ objectPosition: afterPosition }}
+        />
         <div className="absolute top-4 right-4 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium">
           {afterLabel}
         </div>
@@ -116,6 +132,8 @@ export function BeforeAfterPageClient() {
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mark_after.JPEG-YpLal3ULpHNJd6msiBqcVYFDbHs3b6.jpeg",
       title: "Forehead Line Treatment",
       description: "A personalized treatment focused on softening the appearance of forehead lines.",
+      beforePosition: "center 35%",
+      afterPosition: "center 46%",
     },
     {
       before:
