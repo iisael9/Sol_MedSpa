@@ -110,8 +110,10 @@ function ImageComparisonSlider({
 export function BeforeAfterPageClient() {
   const beforeAfterData = [
     {
-      before: "/woman-with-forehead-wrinkles-before-treatment.jpg",
-      after: "/same-woman-with-smooth-forehead-after-botox-treatm.jpg",
+      before:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mark_before-NZdyMNoJsTc7DKNMvD3aHhWZ6JzkdO.jpeg",
+      after:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mark_after.JPEG-YpLal3ULpHNJd6msiBqcVYFDbHs3b6.jpeg",
       title: "Botox Treatment",
       description: "Smoothed forehead lines and crow's feet with natural-looking results",
     },
