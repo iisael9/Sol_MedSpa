@@ -1,14 +1,12 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Instagram, Facebook } from "lucide-react" // Import Instagram and Facebook icons
 
-// Image Comparison Slider Component
+// Side-by-side comparison cards
 function ImageComparisonSlider({
   beforeImage,
   afterImage,
@@ -24,101 +22,25 @@ function ImageComparisonSlider({
   beforePosition?: string
   afterPosition?: string
 }) {
-  const [sliderPosition, setSliderPosition] = useState(50)
-  const [isDragging, setIsDragging] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  const handleMove = (clientX: number) => {
-    if (!containerRef.current) return
-
-    const rect = containerRef.current.getBoundingClientRect()
-    const x = Math.max(0, Math.min(clientX - rect.left, rect.width))
-    const percent = Math.max(0, Math.min((x / rect.width) * 100, 100))
-
-    setSliderPosition(percent)
-  }
-
-  const handleMouseMove = (e: MouseEvent) => {
-    if (isDragging) {
-      handleMove(e.clientX)
-    }
-  }
-
-  const handleTouchMove = (e: TouchEvent) => {
-    if (isDragging) {
-      handleMove(e.touches[0].clientX)
-    }
-  }
-
-  const handleStart = () => {
-    setIsDragging(true)
-  }
-
-  const handleEnd = () => {
-    setIsDragging(false)
-  }
-
-  useEffect(() => {
-    if (isDragging) {
-      window.addEventListener("mousemove", handleMouseMove)
-      window.addEventListener("mouseup", handleEnd)
-      window.addEventListener("touchmove", handleTouchMove)
-      window.addEventListener("touchend", handleEnd)
-    }
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
-      window.removeEventListener("mouseup", handleEnd)
-      window.removeEventListener("touchmove", handleTouchMove)
-      window.removeEventListener("touchend", handleEnd)
-    }
-  }, [isDragging])
-
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl cursor-ew-resize select-none"
-      onMouseDown={handleStart}
-      onTouchStart={handleStart}
-    >
-      {/* Before Image */}
-      <div className="absolute inset-0">
-        <Image
-          src={beforeImage || "/placeholder.svg"}
-          alt={beforeLabel}
-          fill
-          className="object-cover"
-          style={{ objectPosition: beforePosition }}
-        />
-        <div className="absolute top-4 left-4 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium">
-          {beforeLabel}
-        </div>
-      </div>
-
-      {/* After Image with clip */}
-      <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
-        <Image
-          src={afterImage || "/placeholder.svg"}
-          alt={afterLabel}
-          fill
-          className="object-cover"
-          style={{ objectPosition: afterPosition }}
-        />
-        <div className="absolute top-4 right-4 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium">
-          {afterLabel}
-        </div>
-      </div>
-
-      {/* Slider Handle */}
-      <div
-        className="absolute top-0 bottom-0 w-1 bg-white shadow-lg"
-        style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
-      >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-sol-brown shadow-xl flex items-center justify-center cursor-grab active:cursor-grabbing">
-          <ChevronLeft className="w-4 h-4 text-white absolute left-2" />
-          <ChevronRight className="w-4 h-4 text-white absolute right-2" />
-        </div>
-      </div>
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+      {[{ image: beforeImage, label: beforeLabel, position: beforePosition }, { image: afterImage, label: afterLabel, position: afterPosition }].map((photo) => (
+        <figure key={photo.label} className="overflow-hidden rounded-2xl border border-sol-brown/15 bg-background shadow-lg">
+          <div className="relative aspect-[4/3]">
+            <Image
+              src={photo.image || "/placeholder.svg"}
+              alt={photo.label}
+              fill
+              className="object-cover"
+              style={{ objectPosition: photo.position }}
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+          <figcaption className="px-5 py-3 text-center text-sm font-semibold tracking-[0.18em] text-sol-brown uppercase">
+            {photo.label}
+          </figcaption>
+        </figure>
+      ))}
     </div>
   )
 }
@@ -165,7 +87,7 @@ export function BeforeAfterPageClient() {
             <span className="block text-sol-orange">& Radiance</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            See the transformative results of our treatments. Drag the slider to compare before and after photos.
+            Explore real treatment results with clear, side-by-side Before and After photos.
           </p>
         </div>
       </section>
